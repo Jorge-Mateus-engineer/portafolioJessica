@@ -19,19 +19,10 @@ let pageIcons;
 
 //Quitar pagina de carga cuando las imagenes esten listas
 
-let loadedImages = 0;
-
-imagenes.forEach((img) =>
-  img.addEventListener("load", () => {
-    loadedImages++;
-    console.log(`Imagenes cargadas = ${loadedImages}`);
-
-    if (loadedImages >= 6) {
-      galeriaPrincipal.style.display = "grid";
-      pantallaDeCarga.style.display = "none";
-    }
-  })
-);
+setTimeout(() => {
+  galeriaPrincipal.style.display = "grid";
+  pantallaDeCarga.style.display = "none";
+}, 2500);
 
 //Crear los iconos de paginacion con base a la cantidad total de imagenes
 
