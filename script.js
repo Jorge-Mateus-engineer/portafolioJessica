@@ -21,7 +21,6 @@ diseño.addEventListener("mouseout", () => {
   imgDiseño.style.filter = "blur(0)";
   ilustracion.style.transform = "translateX(0)";
   fotografia.style.transform = "translateX(0)";
-  tituloDiseño.style.opacity = "0";
 });
 
 ilustracion.addEventListener("mouseover", () => {
@@ -33,7 +32,6 @@ ilustracion.addEventListener("mouseover", () => {
 ilustracion.addEventListener("mouseout", () => {
   imgIlustracion.style.filter = "blur(0)";
   fotografia.style.transform = "translateX(0)";
-  tituloIlustracion.style.opacity = "0";
 });
 
 fotografia.addEventListener("mouseover", () => {
@@ -43,7 +41,6 @@ fotografia.addEventListener("mouseover", () => {
 
 fotografia.addEventListener("mouseout", () => {
   imgFotografia.style.filter = "blur(0)";
-  tituloFotografia.style.opacity = "0";
 });
 
 //Event listeners para los hipervinculos
