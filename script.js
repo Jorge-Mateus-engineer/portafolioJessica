@@ -10,41 +10,41 @@ const tituloFotografia = document.querySelector(".titulo-fotografia");
 
 //Event listeners para las animaciones basicas
 
-// diseño.addEventListener("mouseover", () => {
-//   imgDiseño.style.filter = "blur(5px)";
-//   ilustracion.style.transform = "translateX(15%)";
-//   fotografia.style.transform = "translateX(15%)";
-//   tituloDiseño.style.opacity = "1";
-// });
+diseño.addEventListener("mouseover", () => {
+  imgDiseño.style.filter = "blur(5px)";
+  ilustracion.style.transform = "translateX(10%)";
+  fotografia.style.transform = "translateX(10%)";
+  tituloDiseño.style.opacity = "1";
+});
 
-// diseño.addEventListener("mouseout", () => {
-//   imgDiseño.style.filter = "blur(0)";
-//   ilustracion.style.transform = "translateX(0)";
-//   fotografia.style.transform = "translateX(5%)";
-//   tituloDiseño.style.opacity = "0";
-// });
+diseño.addEventListener("mouseout", () => {
+  imgDiseño.style.filter = "blur(0)";
+  ilustracion.style.transform = "translateX(0)";
+  fotografia.style.transform = "translateX(0)";
+  tituloDiseño.style.opacity = "0";
+});
 
-// ilustracion.addEventListener("mouseover", () => {
-//   imgIlustracion.style.filter = "blur(5px)";
-//   fotografia.style.transform = "translateX(15%)";
-//   tituloIlustracion.style.opacity = "1";
-// });
+ilustracion.addEventListener("mouseover", () => {
+  imgIlustracion.style.filter = "blur(5px)";
+  fotografia.style.transform = "translateX(10%)";
+  tituloIlustracion.style.opacity = "1";
+});
 
-// ilustracion.addEventListener("mouseout", () => {
-//   imgIlustracion.style.filter = "blur(0)";
-//   fotografia.style.transform = "translateX(5%)";
-//   tituloIlustracion.style.opacity = "0";
-// });
+ilustracion.addEventListener("mouseout", () => {
+  imgIlustracion.style.filter = "blur(0)";
+  fotografia.style.transform = "translateX(0)";
+  tituloIlustracion.style.opacity = "0";
+});
 
-// fotografia.addEventListener("mouseover", () => {
-//   imgFotografia.style.filter = "blur(5px)";
-//   tituloFotografia.style.opacity = "1";
-// });
+fotografia.addEventListener("mouseover", () => {
+  imgFotografia.style.filter = "blur(5px)";
+  tituloFotografia.style.opacity = "1";
+});
 
-// fotografia.addEventListener("mouseout", () => {
-//   imgFotografia.style.filter = "blur(0)";
-//   tituloFotografia.style.opacity = "0";
-// });
+fotografia.addEventListener("mouseout", () => {
+  imgFotografia.style.filter = "blur(0)";
+  tituloFotografia.style.opacity = "0";
+});
 
 //Event listeners para los hipervinculos
 
