@@ -167,6 +167,7 @@ div.overlay-gallery {
   height: 80%;
   display: flex;
   margin-bottom: 2rem;
+  justify-content: center;
 }
 
 #gallery-img {
@@ -175,6 +176,18 @@ div.overlay-gallery {
   border: 1px solid var(--greys-color);
   margin-bottom: 2rem;
   transition: all 0.3s ease;
+}
+
+.img-desc {
+  padding: 2rem;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.img-tittle {
+  color: var(--greys-color);
 }
 
 .pagination {

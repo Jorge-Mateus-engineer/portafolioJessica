@@ -1,6 +1,6 @@
 //Importar colorThief y crear una instancia
 
-import ColorThief from "./node_modules/colorthief/dist/color-thief.mjs";
+import ColorThief from "../node_modules/colorthief/dist/color-thief.mjs";
 
 const colorThief = new ColorThief();
 
@@ -16,6 +16,7 @@ const imagenGaleria = document.getElementById("gallery-img");
 const pagination = document.querySelector(".pagination");
 const flechasGaleria = document.querySelectorAll(".gallery-arrow");
 let pageIcons;
+let galleryIndex;
 
 //Quitar pagina de carga cuando las imagenes esten listas
 
@@ -58,6 +59,14 @@ const paginationClear = () => {
   pageIcons.forEach((icon) => (icon.style.backgroundColor = "transparent"));
 };
 
+const firstImageFrame = () => {
+  if (imagenGaleria.dataset.index == "1") {
+    imagenGaleria.style.border = "1px solid white";
+  } else {
+    imagenGaleria.style.border = "1px solid var(--greys-color)";
+  }
+};
+
 //Funcion para mostrar la galeria
 
 const showGallery = (e) => {
@@ -72,8 +81,8 @@ const showGallery = (e) => {
   titulo.style.marginRight = "1rem";
   overlay.classList.remove("hidden");
   document.documentElement.style.overflow = "hidden";
+  firstImageFrame();
   paginationStart();
-  console.log(e.target.offsetHeight);
 };
 
 //Funcion para ocultar la galeria
@@ -107,7 +116,7 @@ overlay.addEventListener("click", hideGallery);
 //Paginacion - logica general
 //La direccion 1 es derecha, 0 es izquierda
 
-const cambiarPagina = function (direccion, currentIndex) {
+const changePage = function (direccion, currentIndex) {
   let newColor;
   if (direccion === 1) {
     currentIndex =
@@ -128,7 +137,6 @@ const cambiarPagina = function (direccion, currentIndex) {
   }
   overlay.style.backgroundColor = `rgba(${newColor[0]},${newColor[1]},${newColor[2]}, 0.95)`;
   imagenGaleria.dataset.index = currentIndex;
-
   return currentIndex;
 };
 
@@ -138,18 +146,33 @@ flechasGaleria.forEach((flecha) =>
   flecha.addEventListener("click", (e) => {
     e.stopPropagation(); //Para que no se cierre el overlay
     paginationClear(); //Para reiniciar los iconos de paginacion
-
-    let currentIndex = parseInt(imagenGaleria.dataset.index);
-
-    if (e.currentTarget.classList.contains("right")) {
-      currentIndex = cambiarPagina(1, currentIndex);
-    } else if (e.currentTarget.classList.contains("left")) {
-      currentIndex = cambiarPagina(0, currentIndex);
+    if (!galleryIndex) {
+      galleryIndex = parseInt(imagenGaleria.dataset.index);
     }
-    console.log(currentIndex);
+    console.log(`Starting: ${galleryIndex}`);
+    if (e.currentTarget.classList.contains("right")) {
+      galleryIndex = changePage(1, galleryIndex);
+    } else if (e.currentTarget.classList.contains("left")) {
+      galleryIndex = changePage(0, galleryIndex);
+    }
+    console.log(`Changed: ${galleryIndex}`);
+    firstImageFrame();
     paginationStart();
   })
 );
+
+pageIcons.forEach((p) => {
+  p.addEventListener("click", () => {
+    paginationClear();
+    p.style.backgroundColor = "#48d1bf";
+    const img = document.querySelector(`img[data-index="${p.dataset.pag}"]`);
+    const newColor = colorThief.getColor(img);
+    overlay.style.backgroundColor = `rgba(${newColor[0]},${newColor[1]},${newColor[2]}, 0.95)`;
+    imagenGaleria.src = img.src;
+    galleryIndex = parseInt(p.dataset.pag);
+    console.log(galleryIndex);
+  });
+});
 
 //Paginacion con las flechas del teclado y cerrar overlay con tecla esc
 
@@ -159,12 +182,13 @@ document.addEventListener("keydown", (e) => {
       hideGallery();
     } else {
       paginationClear(); //Para reiniciar los iconos de paginacion
-      let currentIndex = parseInt(imagenGaleria.dataset.index);
+      galleryIndex = parseInt(imagenGaleria.dataset.index);
       if (e.key === "ArrowRight") {
-        currentIndex = cambiarPagina(1, currentIndex);
+        galleryIndex = cambiarPagina(1, galleryIndex);
       } else if (e.key === "ArrowLeft") {
-        currentIndex = cambiarPagina(0, currentIndex);
+        galleryIndex = cambiarPagina(0, galleryIndex);
       }
+      firstImageFrame();
       paginationStart();
     }
   }
