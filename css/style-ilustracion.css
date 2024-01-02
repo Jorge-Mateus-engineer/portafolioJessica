@@ -31,7 +31,7 @@ html::-webkit-scrollbar-thumb {
   outline: 1px transparent var(--greys-color);
 }
 
-/*Pantalla de carga temporal*/
+/*Pantalla de carga*/
 
 .loading-screen {
   display: flex;
@@ -83,16 +83,6 @@ html::-webkit-scrollbar-thumb {
   width: auto;
   animation: loadingScreen 3s linear infinite;
   margin-left: 25rem;
-}
-
-.loading-el:nth-child(1) {
-  height: 75%;
-}
-.loading-el:nth-child(2) {
-  height: 50%;
-}
-.loading-el:nth-child(3) {
-  height: 80%;
 }
 
 /* Galeria */
@@ -206,6 +196,10 @@ div.overlay-gallery {
   display: inline-block;
   border: 1px solid var(--greys-color);
   border-radius: 50%;
+}
+
+.pagination-icon:hover {
+  cursor: pointer;
 }
 
 .gallery-arrow {
