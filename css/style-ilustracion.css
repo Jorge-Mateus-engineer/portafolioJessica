@@ -79,7 +79,7 @@ html::-webkit-scrollbar-thumb {
 }
 
 .loading-icon {
-  height: 20%;
+  height: 15%;
   width: auto;
   animation: loadingScreen 3s linear infinite;
   margin-left: 25rem;
@@ -178,6 +178,11 @@ div.overlay-gallery {
 
 .img-tittle {
   color: var(--greys-color);
+}
+
+.img-text {
+  color: #803234;
+  font-size: 2rem;
 }
 
 .pagination {

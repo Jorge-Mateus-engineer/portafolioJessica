@@ -11,6 +11,10 @@
   --new-color: #faaa8c;
 }
 
+html {
+  background-color: black;
+}
+
 #image-track > img {
   width: 40rem;
   height: 50rem;
@@ -28,4 +32,8 @@
   left: 50%;
   transform: translate(0%, -50%);
   overflow: hidden;
+}
+
+.image {
+  /* transform: scale(1.5); */
 }

@@ -49,7 +49,6 @@ html::-webkit-scrollbar-thumb {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* background-color: var(--accent-color); */
   background-color: #fb9772;
 }
 

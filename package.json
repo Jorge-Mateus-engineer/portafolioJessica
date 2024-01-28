@@ -4,7 +4,7 @@
   "description": "Portafolio de Jessica Peña",
   "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "index.html"
   },
   "author": "Jorge Mateus",
   "license": "ISC",

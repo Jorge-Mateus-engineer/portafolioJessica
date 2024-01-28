@@ -76,7 +76,7 @@ const showGallery = (e) => {
   imagenGaleria.dataset.index = e.target.dataset.index;
   overlay.style.top = `${topPosition}px`;
   overlay.style.display = "flex";
-  overlay.style.backgroundColor = `rgba(${capturedColor[0]},${capturedColor[1]},${capturedColor[2]}, 0.9)`;
+  overlay.style.backgroundColor = `rgba(${capturedColor[0]},${capturedColor[1]},${capturedColor[2]}, 0.95)`;
   navList.style.marginRight = "7rem";
   titulo.style.marginRight = "1rem";
   overlay.classList.remove("hidden");
