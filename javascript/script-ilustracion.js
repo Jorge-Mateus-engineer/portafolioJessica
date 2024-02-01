@@ -23,7 +23,7 @@ let galleryIndex;
 setTimeout(() => {
   galeriaPrincipal.style.display = "grid";
   pantallaDeCarga.style.display = "none";
-}, 2500);
+}, 1000);
 
 //Crear los iconos de paginacion con base a la cantidad total de imagenes
 
