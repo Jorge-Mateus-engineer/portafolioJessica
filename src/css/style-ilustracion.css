@@ -1,0 +1,234 @@
+:root {
+  --main-color: #48d1bf;
+  --main-color-shade1: #daf6f2;
+  --main-color-transparent: rgba(72, 209, 191, 0.5);
+  --accent-color: #ff6468;
+  --accent-color-shade1: #ffa2a4;
+  --accent-tint1: #331415;
+  --greys-color: #30304c;
+  --greys-color-shade1: rgba(152, 152, 166, 0.5);
+  --greys-color-transparent: rgba(48, 48, 76, 0.5);
+  --new-color: #f8cfc0;
+}
+
+html {
+  background-color: var(--main-color-shade1);
+  font-family: "Balsamiq Sans", cursive;
+}
+
+html::-webkit-scrollbar {
+  width: 1rem;
+  height: 0;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: var(--main-color-shade1);
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: var(--accent-color);
+  border-radius: 6px;
+  outline: 1px transparent var(--greys-color);
+}
+
+/*Pantalla de carga*/
+
+.loading-screen {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: calc(100vw - 1rem);
+  height: calc(100vh - 8rem);
+  padding: 0 1rem 5rem 1rem;
+}
+
+@keyframes loadingScreen {
+  0% {
+    transform: translateX(20rem);
+  }
+  10% {
+    transform: translateX(30rem) translateY(-5rem);
+  }
+  20% {
+    transform: translateX(40rem) translateY(5rem);
+  }
+  30% {
+    transform: translateX(50rem) translateY(-5rem);
+  }
+  40% {
+    transform: translateX(60rem) translateY(5rem);
+  }
+  50% {
+    transform: translateX(70rem) translateY(-5rem);
+  }
+  60% {
+    transform: translateX(80rem) translateY(5rem);
+  }
+  70% {
+    transform: translateX(90rem) translateY(-5rem);
+  }
+  80% {
+    transform: translateX(100rem) translateY(5rem);
+  }
+  90% {
+    transform: translateX(110rem) translateY(-5rem);
+  }
+  100% {
+    transform: translateX(120rem) translateY(5rem);
+  }
+}
+
+.loading-icon {
+  height: 15%;
+  width: auto;
+  animation: loadingScreen 3s linear infinite;
+  margin-left: 25rem;
+}
+
+/* Galeria */
+
+h1 {
+  text-align: center;
+  font-size: 5rem;
+  color: var(--greys-color);
+  padding: 2rem 0;
+  background-color: var(--main-color-shade1);
+}
+
+.blur-load {
+  background-size: cover;
+  width: 100%;
+  height: 75rem;
+  border-radius: 15px;
+}
+
+.main-gallery {
+  display: none;
+  column-gap: 1rem;
+  width: calc(100vw - 1rem);
+  background-color: var(--main-color-shade1);
+  grid-template-columns: repeat(3, minmax(25rem, 1fr));
+  padding: 0 1rem 5rem 1rem;
+}
+
+.flex-col {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.img-el {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  transition: all 0.3s;
+  object-position: center;
+  object-fit: cover;
+}
+
+.img-el:hover {
+  transform: scale(1.03);
+  border: 2px solid var(--accent-color);
+  cursor: pointer;
+  z-index: 5;
+}
+
+/*Overlay*/
+
+div.overlay-gallery {
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  content: "";
+  background-color: var(--new-color);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: all 0.5s;
+}
+
+.hidden {
+  display: none;
+}
+
+.img-container {
+  height: 80%;
+  display: flex;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+#gallery-img {
+  height: 100%;
+  width: auto;
+  border: 1px solid var(--greys-color);
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+}
+
+.img-desc {
+  padding: 2rem;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.img-tittle {
+  color: var(--greys-color);
+}
+
+.img-text {
+  color: #803234;
+  font-size: 2rem;
+}
+
+.pagination {
+  height: 2rem;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.pagination-icon {
+  content: "";
+  width: 1.5rem;
+  height: 1.5rem;
+  display: inline-block;
+  border: 1px solid var(--greys-color);
+  border-radius: 50%;
+}
+
+.pagination-icon:hover {
+  cursor: pointer;
+}
+
+.gallery-arrow {
+  display: inline-block;
+  position: absolute;
+  height: 4.5rem;
+  width: 4.5rem;
+  stroke: var(--greys-color);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.gallery-arrow:hover {
+  cursor: pointer;
+}
+
+.gallery-arrow:first-of-type {
+  left: 2rem;
+}
+
+.gallery-arrow:last-of-type {
+  right: 2rem;
+}
+
+.image-transition {
+  transition: opacity 0.3s ease;
+}

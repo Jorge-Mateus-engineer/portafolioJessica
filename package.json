@@ -2,10 +2,10 @@
   "name": "portafolio-jessica",
   "version": "1.0.0",
   "description": "Portafolio de Jessica Peña",
-  "main": "script.js",
+  "default": "index.html",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build --no-minify index.html"
+    "build": "parcel build index.html --dist-dir ./dist"
   },
   "author": "Jorge Mateus",
   "license": "ISC",
@@ -13,6 +13,6 @@
     "colorthief": "^2.2.0"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.12.5"
+    "parcel": "^2.11.0"
   }
 }
