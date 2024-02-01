@@ -1,6 +1,6 @@
 //Importar colorThief y crear una instancia
 
-import ColorThief from "../node_modules/colorthief/dist/color-thief.mjs";
+import ColorThief from "colorthief/dist/color-thief.mjs";
 
 const colorThief = new ColorThief();
 
