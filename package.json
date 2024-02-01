@@ -4,8 +4,8 @@
   "description": "Portafolio de Jessica Peña",
   "main": "script.js",
   "scripts": {
-    "start": "parcel",
-    "build": "parcel build"
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
   },
   "author": "Jorge Mateus",
   "license": "ISC",
