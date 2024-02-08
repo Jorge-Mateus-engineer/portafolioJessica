@@ -110,11 +110,56 @@ html::-webkit-scrollbar-thumb {
   border-radius: 5px;
 }
 
+/*Dropdown links de insta*/
+
+.insta-logo {
+  position: relative;
+}
+
+.hidden-dropdown {
+  display: none;
+}
+
+.dropdown-insta {
+  position: absolute;
+  top: 8rem;
+  z-index: 10;
+  width: 15rem;
+  transition: all 5s;
+}
+
+.insta-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: var(--main-color);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.insta-link {
+  display: flex;
+}
+
+.insta-link:hover {
+  background-color: red;
+}
+
+.dropdown-icon {
+  height: 2rem;
+  width: auto;
+  padding-right: 5px;
+}
+
 /* Projects */
 
 .projects-container {
   padding: 2rem;
   height: calc(100vh - 8rem);
+  position: relative;
 }
 
 .projects {
@@ -134,7 +179,7 @@ html::-webkit-scrollbar-thumb {
   transition: all 0.3s;
 }
 
-.titulo-diseño,
+.titulo-diseno,
 .titulo-ilustracion,
 .titulo-fotografia {
   position: absolute;
@@ -170,4 +215,35 @@ html::-webkit-scrollbar-thumb {
 .p3 {
   z-index: 3;
   border-radius: 34% 0% 0% 38% / 41% 10% 10% 46%;
+}
+
+.main-icon {
+  width: 100%;
+  height: 100%;
+}
+
+.icon {
+  position: absolute;
+  width: 50rem;
+  height: 50rem;
+  z-index: 6;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+}
+
+.icon::after {
+  content: " ";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: #fb9772;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  position: absolute;
+  z-index: -1; /* to be below the parent element */
 }

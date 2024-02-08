@@ -8,6 +8,9 @@ const fotografia = document.querySelector(".p3");
 const imgFotografia = document.querySelector(".img-fotografia");
 const tituloFotografia = document.querySelector(".titulo-fotografia");
 
+const logoInstagram = document.querySelector(".insta-logo");
+const dropdown = document.querySelector(".dropdown-insta");
+
 //Event listeners para las animaciones basicas
 
 diseno.addEventListener("mouseover", () => {
@@ -48,4 +51,10 @@ fotografia.addEventListener("mouseout", () => {
 ilustracion.addEventListener("click", (e) => {
   const url = ilustracion.dataset.href;
   window.location.href = url;
+});
+
+//Mostrar el menu dropdown de links de instagram
+
+logoInstagram.addEventListener("click", () => {
+  dropdown.classList.toggle("hidden-dropdown");
 });
