@@ -1,26 +1,7 @@
-// const gallery = document.querySelector(".image-gallery");
-
-// window.onmousedown = (e) => {
-//   gallery.dataset.mouseDownAt = e.clientX;
-// };
-
-// window.onmousemove = (e) => {
-//   if (gallery.dataset.mouseDownAt == "0") return;
-//   const mouseDelta = parseFloat(gallery.dataset.mouseDownAt) - e.clientX;
-//   const maxDelta = window.innerWidth / 0.5;
-//   const percentage = (mouseDelta / maxDelta) * -100;
-//   const nextPercentage =
-//     parseFloat(gallery.dataset.percentageMoved) + percentage;
-//   gallery.dataset.percentage = nextPercentage;
-//   gallery.style.transform = `translate(${nextPercentage}%, -50%)`;
-// };
-
-// window.onmouseup = (e) => {
-//   gallery.dataset.mouseDownAt = "0";
-//   gallery.dataset.percentageMoved = gallery.dataset.percentage;
-// };
-
 const track = document.getElementById("image-track");
+const imageList = document.querySelectorAll(".image");
+const galleryImg = document.getElementById("gallery-img");
+const overlay = document.querySelector(".gallery-overlay");
 
 const handleOnDown = (e) => (track.dataset.mouseDownAt = e.clientX);
 
@@ -59,7 +40,7 @@ const handleOnMove = (e) => {
   }
 };
 
-/* -- Had to add extra lines for touch events -- */
+/* -- For touch events -- */
 
 window.onmousedown = (e) => handleOnDown(e);
 
@@ -72,3 +53,40 @@ window.ontouchend = (e) => handleOnUp(e.touches[0]);
 window.onmousemove = (e) => handleOnMove(e);
 
 window.ontouchmove = (e) => handleOnMove(e.touches[0]);
+
+/*Gallery Overlay */
+
+const setDimensions = () => {
+  const width = galleryImg.naturalWidth;
+  const height = galleryImg.naturalHeight;
+
+  if (width > height) {
+    galleryImg.style.width = "100%";
+  } else {
+    galleryImg.style.height = "100%";
+  }
+};
+
+const removeDimensions = () => {
+  galleryImg.style.width = null;
+
+  galleryImg.style.height = null;
+};
+
+const showGallery = (e) => {
+  galleryImg.src = e.target.src;
+  setDimensions();
+  overlay.classList.remove("hidden");
+};
+
+const hideGallery = (e) => {
+  galleryImg.src = " ";
+  overlay.classList.add("hidden");
+  removeDimensions();
+};
+
+imageList.forEach((image) => {
+  image.addEventListener("click", showGallery);
+});
+
+overlay.addEventListener("click", hideGallery);

@@ -53,6 +53,11 @@ ilustracion.addEventListener("click", (e) => {
   window.location.href = url;
 });
 
+fotografia.addEventListener("click", (e) => {
+  const url = fotografia.dataset.href;
+  window.location.href = url;
+});
+
 //Mostrar el menu dropdown de links de instagram
 
 logoInstagram.addEventListener("click", () => {
