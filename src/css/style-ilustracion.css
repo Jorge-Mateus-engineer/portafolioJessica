@@ -163,26 +163,25 @@ div.overlay-gallery {
 #gallery-img {
   height: 100%;
   width: auto;
-  border: 1px solid var(--greys-color);
+  border: 1px solid white;
   margin-bottom: 2rem;
   transition: all 0.3s ease;
 }
 
 .img-desc {
-  padding: 2rem;
+  padding: 0 3rem;
   width: 30%;
   display: flex;
-  flex-direction: column;
-  gap: 5rem;
-}
-
-.img-tittle {
-  color: var(--greys-color);
+  align-items: center;
+  justify-content: center;
 }
 
 .img-text {
   color: #803234;
-  font-size: 2rem;
+  font-size: 3rem;
+  padding: 2rem;
+  border-radius: 20px;
+  background-color: #daf6f2;
 }
 
 .pagination {
