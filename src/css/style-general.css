@@ -181,6 +181,10 @@ html::-webkit-scrollbar-thumb {
   transition: all 0.3s;
 }
 
+.project:hover {
+  cursor: pointer;
+}
+
 .titulo-diseno,
 .titulo-ilustracion,
 .titulo-fotografia {

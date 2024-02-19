@@ -57,6 +57,11 @@ fotografia.addEventListener("click", (e) => {
   window.location.href = url;
 });
 
+diseno.addEventListener("click", (e) => {
+  const url = diseno.dataset.href;
+  window.location.href = url;
+});
+
 //Mostrar el menu dropdown de links de instagram
 
 logoInstagram.addEventListener("click", () => {
