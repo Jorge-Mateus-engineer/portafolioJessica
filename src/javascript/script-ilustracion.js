@@ -260,6 +260,7 @@ document.addEventListener("keydown", (e) => {
         galleryIndex = changePage(0, galleryIndex);
       }
       paginationStart();
+      addTextToGallery();
     }
   }
 });
