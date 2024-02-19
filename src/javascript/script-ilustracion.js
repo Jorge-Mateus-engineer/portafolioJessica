@@ -144,10 +144,8 @@ const addTextToGallery = function () {
 
 const showGallery = (e) => {
   galleryIndex = e.target.dataset.index * 1;
-  console.log(galleryIndex);
   const topPosition = window.scrollY;
   const capturedColor = colorThief.getColor(e.target);
-  console.log(colorThief.getPalette(e.target, 5));
   imagenGaleria.src = e.target.src;
   imagenGaleria.dataset.index = e.target.dataset.index;
   overlay.style.top = `${topPosition}px`;
@@ -222,7 +220,6 @@ flechasGaleria.forEach((flecha) =>
   flecha.addEventListener("click", (e) => {
     e.stopPropagation(); //Para que no se cierre el overlay
     paginationClear(); //Para reiniciar los iconos de paginacion
-    console.log(galleryIndex);
     if (!galleryIndex) {
       galleryIndex = parseInt(imagenGaleria.dataset.index);
     }
@@ -258,9 +255,9 @@ document.addEventListener("keydown", (e) => {
       paginationClear(); //Para reiniciar los iconos de paginacion
       galleryIndex = parseInt(imagenGaleria.dataset.index);
       if (e.key === "ArrowRight") {
-        galleryIndex = cambiarPagina(1, galleryIndex);
+        galleryIndex = changePage(1, galleryIndex);
       } else if (e.key === "ArrowLeft") {
-        galleryIndex = cambiarPagina(0, galleryIndex);
+        galleryIndex = changePage(0, galleryIndex);
       }
       paginationStart();
     }

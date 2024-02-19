@@ -159,6 +159,8 @@ html::-webkit-scrollbar-thumb {
 .projects-container {
   padding: 2rem;
   height: calc(100vh - 8rem);
+  max-width: 210rem;
+  margin: 0 auto;
   position: relative;
 }
 
@@ -203,6 +205,9 @@ html::-webkit-scrollbar-thumb {
 
 .p1 {
   margin-right: -20%;
+  background: url("../img/Ilustración/Paisaje-rosa.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .p2 {
@@ -210,11 +215,17 @@ html::-webkit-scrollbar-thumb {
   border-radius: 34% 0% 0% 38% / 41% 10% 10% 46%;
   width: 100rem;
   z-index: 2;
+  background: url("../img/Ilustración/Cables.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .p3 {
   z-index: 3;
   border-radius: 34% 0% 0% 38% / 41% 10% 10% 46%;
+  background: url("../img/Ilustración/Bird-poses.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .main-icon {
