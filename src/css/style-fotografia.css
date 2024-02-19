@@ -78,6 +78,6 @@ html {
   align-items: center;
 }
 
-/* #gallery-img {
-  object-fit: contain;
-} */
+.hidden-photo {
+  display: none;
+}

@@ -145,7 +145,7 @@ html::-webkit-scrollbar-thumb {
 }
 
 .insta-link:hover {
-  background-color: red;
+  text-decoration: underline;
 }
 
 .dropdown-icon {

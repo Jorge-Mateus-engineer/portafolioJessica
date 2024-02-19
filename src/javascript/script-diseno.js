@@ -7,7 +7,7 @@ const imgContainer = document.querySelector(".img-container");
 const overlay = document.querySelector(".overlay-diseno");
 
 const showGallery = function (e) {
-  overlay.classList.remove("hidden");
+  overlay.classList.remove("hidden-diseno");
   const content = e.target.parentNode.dataset.content;
 
   switch (content) {
@@ -43,6 +43,6 @@ cards.forEach((c) => {
 
 overlay.addEventListener("click", (e) => {
   e.stopPropagation();
-  overlay.classList.add("hidden");
+  overlay.classList.add("hidden-diseno");
   imgContainer.innerHTML = "";
 });

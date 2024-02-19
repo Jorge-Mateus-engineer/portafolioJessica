@@ -37,7 +37,7 @@
 }
 
 .img2 {
-  background: url("../img/Diseno/Carteles/Cartel-Colombiano.jpg");
+  background: url("../img/Diseno/Carteles/ACartel-Colombiano.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -78,7 +78,6 @@
 .overlay-diseno::-webkit-scrollbar-thumb {
   background-color: var(--accent-color);
   border-radius: 6px;
-  outline: 1px transparent var(--greys-color);
 }
 
 .img-container {
@@ -86,4 +85,8 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+}
+
+.hidden-diseno {
+  display: none;
 }

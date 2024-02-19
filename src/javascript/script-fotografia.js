@@ -76,12 +76,12 @@ const removeDimensions = () => {
 const showGallery = (e) => {
   galleryImg.src = e.target.src;
   setDimensions();
-  overlay.classList.remove("hidden");
+  overlay.classList.remove("hidden-photo");
 };
 
 const hideGallery = (e) => {
   galleryImg.src = " ";
-  overlay.classList.add("hidden");
+  overlay.classList.add("hidden-photo");
   removeDimensions();
 };
 
