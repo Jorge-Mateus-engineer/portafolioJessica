@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/style-general.css" />
     <link rel="stylesheet" href="../css/style-diseno.css" />
+    <script defer type="module" src="../javascript/script-diseno.js"></script>
     <title>Jessica Peña</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -84,20 +85,23 @@
     <main>
       <div class="container">
         <div class="projects-grid">
-          <div class="poject-card">
+          <div class="project-card" data-content="calendarios">
             <div class="project-img img1"></div>
             <div class="poject-title"><h2>Calendarios</h2></div>
           </div>
-          <div class="poject-card">
+          <div class="project-card" data-content="carteles">
             <div class="project-img img2"></div>
             <div class="poject-title"><h2>Carteles</h2></div>
           </div>
-          <div class="poject-card">
+          <div class="project-card" data-content="logo">
             <div class="project-img img3"></div>
             <div class="poject-title"><h2>Logotipo</h2></div>
           </div>
         </div>
       </div>
     </main>
+    <div class="overlay-diseno hidden">
+      <div class="img-container"></div>
+    </div>
   </body>
 </html>

@@ -1,0 +1,12 @@
+{
+  "extends": "@parcel/config-default",
+  "transformers": {
+    "file": [
+      "parcel-transformer-file-loader"
+    ]
+  },
+  "resolvers": [
+    "@parcel/resolver-glob",
+    "..."
+  ]
+}
