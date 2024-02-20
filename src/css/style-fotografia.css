@@ -81,3 +81,33 @@ html {
 .hidden-photo {
   display: none;
 }
+
+/*Flechas galeria*/
+
+.buttons {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10%;
+  margin-bottom: 5rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.arrow {
+  height: 5rem;
+  width: 5rem;
+  stroke: black;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.arrow:hover {
+  cursor: pointer;
+}
+
+.arrow:active {
+  stroke: white;
+  background-color: black;
+}

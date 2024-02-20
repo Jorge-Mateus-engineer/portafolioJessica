@@ -87,7 +87,12 @@
         </li>
       </ul>
     </nav>
-    <main id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
+    <main
+      id="image-track"
+      data-mouse-down-at="0"
+      data-prev-percentage="0"
+      data-percentage="0"
+    >
       <img
         class="image"
         src="../img/Fotografia/Foto final.jpg"
@@ -185,6 +190,36 @@
         draggable="false"
       />
     </main>
+    <div class="buttons">
+      <svg
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        class="arrow"
+        data-direction="0"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+          data-direction="0"
+        />
+      </svg>
+      <svg
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        class="arrow"
+        data-direction="1"
+      >
+        <path
+          data-direction="1"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+        />
+      </svg>
+    </div>
     <div class="gallery-overlay hidden-photo">
       <div class="img-container">
         <img alt="" id="gallery-img" />

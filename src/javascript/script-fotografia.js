@@ -2,6 +2,7 @@ const track = document.getElementById("image-track");
 const imageList = document.querySelectorAll(".image");
 const galleryImg = document.getElementById("gallery-img");
 const overlay = document.querySelector(".gallery-overlay");
+const buttons = document.querySelectorAll(".arrow");
 
 const handleOnDown = (e) => (track.dataset.mouseDownAt = e.clientX);
 
@@ -39,6 +40,35 @@ const handleOnMove = (e) => {
     );
   }
 };
+
+handleButtonClick = (e) => {
+  const direction = e.target.dataset.direction * 1;
+  const currentPercentage = track.dataset.percentage * 1;
+  const displacement =
+    direction == 1 ? currentPercentage * 1 - 5 : currentPercentage * 1 + 5;
+
+  if (currentPercentage >= 0 && direction == 0) return;
+  if (currentPercentage <= -100 && direction == 1) return;
+  track.animate(
+    {
+      transform: `translate(${displacement}%, -50%)`,
+    },
+    { duration: 1200, fill: "forwards" }
+  );
+
+  for (const image of track.getElementsByClassName("image")) {
+    image.animate(
+      {
+        objectPosition: `${100 + displacement}% center`,
+      },
+      { duration: 1200, fill: "forwards" }
+    );
+  }
+  track.dataset.percentage = `${displacement}`;
+  track.dataset.prevPercentage = currentPercentage;
+};
+
+buttons.forEach((b) => b.addEventListener("click", handleButtonClick));
 
 /* -- For touch events -- */
 
