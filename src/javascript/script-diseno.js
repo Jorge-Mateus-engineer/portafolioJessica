@@ -23,6 +23,7 @@ const showGallery = function (e) {
       keysCarteles.forEach((k) => {
         const imageElement = document.createElement("img");
         imageElement.src = carteles[k];
+        imageElement.classList.add("img-tall");
         imgContainer.appendChild(imageElement);
       });
       break;

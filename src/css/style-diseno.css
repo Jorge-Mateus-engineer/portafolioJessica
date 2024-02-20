@@ -15,7 +15,7 @@
   background-color: var(--accent-color-shade1);
   overflow: hidden;
   border-radius: 20px;
-  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+  box-shadow: -1.5rem 2.4rem 2.4rem rgba(0, 0, 0, 0.2);
   transition: all 0.3s;
 }
 
