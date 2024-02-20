@@ -41,7 +41,7 @@ const handleOnMove = (e) => {
   }
 };
 
-handleButtonClick = (e) => {
+const handleButtonClick = (e) => {
   const direction = e.target.dataset.direction * 1;
   const currentPercentage = track.dataset.percentage * 1;
   const displacement =
