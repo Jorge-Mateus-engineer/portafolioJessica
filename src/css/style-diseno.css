@@ -87,6 +87,12 @@
   flex-direction: column;
 }
 
+.img-tall {
+  height: 100vh;
+  width: auto;
+  object-fit: contain;
+}
+
 .hidden-diseno {
   display: none;
 }

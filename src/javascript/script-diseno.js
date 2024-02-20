@@ -8,6 +8,7 @@ const overlay = document.querySelector(".overlay-diseno");
 
 const showGallery = function (e) {
   overlay.classList.remove("hidden-diseno");
+  overlay.scrollTop = 0;
   const content = e.target.parentNode.dataset.content;
 
   switch (content) {

@@ -215,7 +215,7 @@ html::-webkit-scrollbar-thumb {
 }
 
 .p2 {
-  margin-right: -20%;
+  margin-right: -15%;
   border-radius: 34% 0% 0% 38% / 41% 10% 10% 46%;
   width: 100rem;
   z-index: 2;
@@ -239,12 +239,11 @@ html::-webkit-scrollbar-thumb {
 
 .icon {
   position: absolute;
-  width: 50rem;
-  height: 50rem;
+  width: 26%;
   z-index: 6;
   top: 50%;
   transform: translateY(-50%);
-  right: 0;
+  right: 2rem;
 }
 
 .icon::after {

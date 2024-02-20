@@ -242,6 +242,7 @@ pageIcons.forEach((p) => {
     overlay.style.backgroundColor = `rgba(${newColor[0]},${newColor[1]},${newColor[2]}, 0.95)`;
     imagenGaleria.src = img.src;
     galleryIndex = parseInt(p.dataset.pag);
+    addTextToGallery();
   });
 });
 
