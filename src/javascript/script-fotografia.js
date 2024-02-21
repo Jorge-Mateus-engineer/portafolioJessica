@@ -1,6 +1,7 @@
 const track = document.getElementById("image-track");
 const imageList = document.querySelectorAll(".image");
 const galleryImg = document.getElementById("gallery-img");
+const imgContainer = document.querySelector(".img-container");
 const overlay = document.querySelector(".gallery-overlay");
 const buttons = document.querySelectorAll(".arrow");
 
@@ -87,10 +88,7 @@ track.ontouchmove = (e) => handleOnMove(e.touches[0]);
 /*Gallery Overlay */
 
 let isDragging = false;
-let startY;
-let startX;
-let startScrollTop;
-let startScrollLeft;
+let scale = 1.0;
 
 const setDimensions = () => {
   const width = galleryImg.naturalWidth;
@@ -118,8 +116,16 @@ const hideGallery = (e) => {
   if (e.target.tagName === "IMG") return;
   galleryImg.src = " ";
   overlay.classList.add("hidden-photo");
-  galleryImg.style.transform = `scale(1)`;
+  galleryImg.animate(
+    {
+      transform: `scale(1)`,
+    },
+    { duration: 100, fill: "forwards" }
+  );
   removeDimensions();
+  Object.keys(galleryImg.dataset).forEach((key) => {
+    galleryImg.dataset[key] = "0";
+  });
 };
 
 const handleMouseOver = (e) => {
@@ -130,31 +136,59 @@ const handleMouseOver = (e) => {
 
 function handleWheel(e) {
   e.preventDefault();
-  let scale = 1.0;
-  scale += e.deltaY * -0.02;
+  scale += e.deltaY * -0.002;
   scale = Math.min(Math.max(0.8, scale), 3);
-  galleryImg.style.transform = `scale(${scale})`;
+  galleryImg.animate(
+    {
+      transform: `scale(${scale})`,
+    },
+    { duration: 200, fill: "forwards" }
+  );
 }
 
 function handleMouseDown(e) {
   isDragging = true;
-  startY = e.clientY;
-  startX = e.clientX;
-  startScrollTop = overlay.scrollTop;
-  startScrollLeft = overlay.scrollLeft;
+  if (scale > 1) {
+    galleryImg.dataset.xDownAt = e.clientX;
+    galleryImg.dataset.yDownAt = e.clientY;
+  }
 }
 
 function handleMouseMove(e) {
   if (isDragging) {
-    const deltaY = e.clientY - startY;
-    const deltaX = e.clientX - startX;
-    overlay.scrollTop = startScrollTop - deltaY;
-    overlay.scrollLeft = startScrollLeft - deltaX;
+    if (galleryImg.dataset.xDownAt == "0" || galleryImg.dataset.yDownAt == "0")
+      return;
+    if (scale > 1) {
+      const deltaX = parseFloat(galleryImg.dataset.xDownAt) - e.clientX;
+      const deltaY = parseFloat(galleryImg.dataset.yDownAt) - e.clientY;
+      const maxDeltaX = (galleryImg.offsetWidth * scale) / 2;
+      const maxDeltaY = (galleryImg.offsetHeight * scale) / 2;
+      const percentageX = (deltaX / maxDeltaX) * -100;
+      const percentageY = (deltaY / maxDeltaY) * -100;
+      const nextPercentageX =
+        parseFloat(galleryImg.dataset.prevXPercentage) + percentageX;
+      const nextPercentageY =
+        parseFloat(galleryImg.dataset.prevYPercentage) + percentageY;
+      galleryImg.dataset.percentageX = nextPercentageX;
+      galleryImg.dataset.percentageY = nextPercentageY;
+      galleryImg.animate(
+        {
+          transform: `scale(${scale}) translate(${nextPercentageX}%, ${nextPercentageY}%)`,
+        },
+        { duration: 1200, fill: "forwards" }
+      );
+    }
   }
 }
 
-function handleMouseUp() {
+function handleMouseUp(e) {
   isDragging = false;
+  if (scale > 1) {
+    galleryImg.dataset.xDownAt = "0";
+    galleryImg.dataset.yDownAt = "0";
+    galleryImg.dataset.prevXPercentage = galleryImg.dataset.percentageX;
+    galleryImg.dataset.prevYPercentage = galleryImg.dataset.percentageY;
+  }
 }
 
 imageList.forEach((image) => {
@@ -165,8 +199,16 @@ overlay.addEventListener("click", hideGallery);
 
 overlay.addEventListener("mouseover", handleMouseOver);
 
-overlay.addEventListener("mousedown", handleMouseDown);
+imgContainer.addEventListener("mousedown", handleMouseDown);
 
-document.addEventListener("mousemove", handleMouseMove);
+imgContainer.addEventListener("mousemove", handleMouseMove);
 
-document.addEventListener("mouseup", handleMouseUp);
+imgContainer.addEventListener("mouseup", handleMouseUp);
+
+document.addEventListener("keydown", (e) => {
+  if (!overlay.classList.contains("hidden-photo")) {
+    if (e.key === "Escape") {
+      hideGallery(e);
+    }
+  }
+});

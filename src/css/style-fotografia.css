@@ -34,6 +34,14 @@ html {
   overflow: hidden;
 }
 
+#image-track:hover {
+  cursor: grab;
+}
+
+#image-track:active {
+  cursor: grabbing;
+}
+
 .gallery-overlay {
   height: 100vh;
   width: 100vw;
@@ -42,19 +50,22 @@ html {
   top: 0;
   left: 0;
   background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: auto;
 }
 
-.gallery-overlay::-webkit-scrollbar {
+.img-container::-webkit-scrollbar {
   width: 1rem;
   height: 0;
 }
 
-.gallery-overlay::-webkit-scrollbar-track {
+.img-container::-webkit-scrollbar-track {
   background-color: transparent;
 }
 
-.gallery-overlay::-webkit-scrollbar-thumb {
+.img-container::-webkit-scrollbar-thumb {
   background-color: var(--main-color);
   border-radius: 6px;
 }
@@ -85,12 +96,13 @@ html {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 80%;
   transform: translate(-50%, -50%);
+  width: 80%;
   height: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 #gallery-img {
@@ -122,7 +134,7 @@ html {
   left: 50%;
   transform: translateX(-50%);
   width: 10%;
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
   display: flex;
   justify-content: space-around;
 }
