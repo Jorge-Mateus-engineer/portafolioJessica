@@ -72,19 +72,25 @@ buttons.forEach((b) => b.addEventListener("click", handleButtonClick));
 
 /* -- For touch events -- */
 
-window.onmousedown = (e) => handleOnDown(e);
+track.onmousedown = (e) => handleOnDown(e);
 
-window.ontouchstart = (e) => handleOnDown(e.touches[0]);
+track.ontouchstart = (e) => handleOnDown(e.touches[0]);
 
-window.onmouseup = (e) => handleOnUp(e);
+track.onmouseup = (e) => handleOnUp(e);
 
-window.ontouchend = (e) => handleOnUp(e.touches[0]);
+track.ontouchend = (e) => handleOnUp(e.touches[0]);
 
-window.onmousemove = (e) => handleOnMove(e);
+track.onmousemove = (e) => handleOnMove(e);
 
-window.ontouchmove = (e) => handleOnMove(e.touches[0]);
+track.ontouchmove = (e) => handleOnMove(e.touches[0]);
 
 /*Gallery Overlay */
+
+let isDragging = false;
+let startY;
+let startX;
+let startScrollTop;
+let startScrollLeft;
 
 const setDimensions = () => {
   const width = galleryImg.naturalWidth;
@@ -99,7 +105,6 @@ const setDimensions = () => {
 
 const removeDimensions = () => {
   galleryImg.style.width = null;
-
   galleryImg.style.height = null;
 };
 
@@ -110,13 +115,58 @@ const showGallery = (e) => {
 };
 
 const hideGallery = (e) => {
+  if (e.target.tagName === "IMG") return;
   galleryImg.src = " ";
   overlay.classList.add("hidden-photo");
+  galleryImg.style.transform = `scale(1)`;
   removeDimensions();
 };
+
+const handleMouseOver = (e) => {
+  if (e.target.tagName === "IMG") {
+    e.target.addEventListener("wheel", handleWheel);
+  }
+};
+
+function handleWheel(e) {
+  e.preventDefault();
+  let scale = 1.0;
+  scale += e.deltaY * -0.02;
+  scale = Math.min(Math.max(0.8, scale), 3);
+  galleryImg.style.transform = `scale(${scale})`;
+}
+
+function handleMouseDown(e) {
+  isDragging = true;
+  startY = e.clientY;
+  startX = e.clientX;
+  startScrollTop = overlay.scrollTop;
+  startScrollLeft = overlay.scrollLeft;
+}
+
+function handleMouseMove(e) {
+  if (isDragging) {
+    const deltaY = e.clientY - startY;
+    const deltaX = e.clientX - startX;
+    overlay.scrollTop = startScrollTop - deltaY;
+    overlay.scrollLeft = startScrollLeft - deltaX;
+  }
+}
+
+function handleMouseUp() {
+  isDragging = false;
+}
 
 imageList.forEach((image) => {
   image.addEventListener("click", showGallery);
 });
 
 overlay.addEventListener("click", hideGallery);
+
+overlay.addEventListener("mouseover", handleMouseOver);
+
+overlay.addEventListener("mousedown", handleMouseDown);
+
+document.addEventListener("mousemove", handleMouseMove);
+
+document.addEventListener("mouseup", handleMouseUp);

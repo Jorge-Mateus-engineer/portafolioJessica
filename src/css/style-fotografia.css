@@ -42,6 +42,21 @@ html {
   top: 0;
   left: 0;
   background-color: black;
+  overflow: auto;
+}
+
+.gallery-overlay::-webkit-scrollbar {
+  width: 1rem;
+  height: 0;
+}
+
+.gallery-overlay::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.gallery-overlay::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
+  border-radius: 6px;
 }
 
 .gallery-arrow {
@@ -76,6 +91,23 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#gallery-img {
+  user-select: none; /* Standard syntax */
+  -moz-user-select: none; /* Firefox */
+  -webkit-user-drag: none; /* WebKit (Safari/Chrome) */
+  -webkit-user-select: none; /* WebKit (Safari/Chrome) */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+#gallery-img:hover {
+  cursor: grab;
+  transition: transform 0.3s ease;
+}
+
+#gallery-img:active {
+  cursor: grabbing;
 }
 
 .hidden-photo {
