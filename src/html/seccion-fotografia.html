@@ -7,7 +7,12 @@
     <script
       defer
       type="module"
-      src="../javascript/script-fotografia.js"
+      src="../javascript/script-fotografia-galeria.js"
+    ></script>
+    <script
+      defer
+      type="module"
+      src="../javascript/script-fotografia-overlay.js"
     ></script>
     <link rel="icon" href="../img/favicon.ico" />
     <link rel="stylesheet" href="../css/style-general.css" />
@@ -94,96 +99,112 @@
         class="image"
         src="../img/Fotografia/Foto final.jpg"
         alt="Cliff"
+        data-index="1"
         draggable="false"
       />
       <img
         class="image"
         src="../img/Fotografia/Foto-final-opcion-2.jpg"
         alt="Foggy forest"
+        data-index="2"
         draggable="false"
       />
       <img
         class="image"
         src="../img/Fotografia/Globo-Intento-Jessica-Peña.jpg"
         alt="360 Fish lens"
+        data-index="3"
         draggable="false"
       />
       <img
         class="image"
         src="../img/Fotografia/MUDDLE-180-1.jpg"
         alt="Forest Panorama"
+        data-index="4"
         draggable="false"
       />
       <img
         class="image"
         src="../img/Fotografia/MUDDLE-180-3.jpg"
         alt="Forest Panorama"
+        data-index="5"
         draggable="false"
       />
       <img
         class="image"
         src="../img/Fotografia/_MG_6821.jpg"
         alt="Town view"
+        data-index="6"
         draggable="false"
       />
       <img
         class="image"
         src="../img/Fotografia/_MG_6851.jpg"
         alt="Parking lot"
+        data-index="7"
         draggable="false"
       />
       <img
         class="image"
         src="../img/Fotografia/_MG_7207.jpg"
         alt="Wheel of fortune"
+        data-index="8"
         draggable="false"
       />
       <img
         class="image"
         src="../img/Fotografia/Vertical-1.jpg"
         alt="Inside of a Church"
+        data-index="9"
         draggable="false"
       />
       <img
         class="image"
         src="../img/Fotografia/Vertical-2.jpg"
         alt="Inside of a Church"
+        data-index="10"
         draggable="false"
       />
       <img
         class="image"
         src="../img/Fotografia/FONO.jpg"
         alt="Golden ring"
+        data-index="11"
         draggable="false"
       />
       <img
         class="image"
         src="../img/Fotografia/Foto deportiva.jpg"
         alt="Boxer"
+        data-index="12"
         draggable="false"
       />
       <img
         class="image"
         src="../img/Fotografia/RETRATO PICTORIALISTA.jpg"
         alt="Girl Portrait"
+        data-index="13"
         draggable="false"
       />
       <img
         class="image"
         src="../img/Fotografia/Retrato-2.jpg"
         alt="Guy Portrait"
+        data-index="14"
         draggable="false"
       />
       <img
         class="image"
         src="../img/Fotografia/0 Juan Retrato Ventana 2.jpg"
         alt="Guy Portrait"
+        data-index="15"
         draggable="false"
       />
       <img
         class="image"
         src="../img/Fotografia/Repetición.jpg"
         alt="Tin containers"
+        data-index="16"
         draggable="false"
       />
     </main>
@@ -219,14 +240,35 @@
     </div>
     <div class="gallery-overlay hidden-photo">
       <div class="img-container">
-        <img
-          alt=""
-          id="gallery-img"
-          data-x-down-at="0"
-          data-prev-x-percentage="0"
-          data-y-down-at="0"
-          data-prev-y-percentage="0"
-        />
+        <img alt="" id="gallery-img" />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="gallery-arrow left"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.75 19.5L8.25 12l7.5-7.5"
+          />
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="gallery-arrow right"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M8.25 4.5l7.5 7.5-7.5 7.5"
+          />
+        </svg>
       </div>
     </div>
   </body>

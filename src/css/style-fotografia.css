@@ -83,8 +83,8 @@ html {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80%;
-  height: 90%;
+  width: 95%;
+  height: 95%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -110,6 +110,34 @@ html {
 
 .hidden-photo {
   display: none;
+}
+
+.gallery-arrow {
+  display: inline-block;
+  position: absolute;
+  height: 4.5rem;
+  width: 4.5rem;
+  background-color: white;
+  stroke: black;
+  border-radius: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.gallery-arrow:hover {
+  cursor: pointer;
+}
+
+.gallery-arrow:first-of-type {
+  left: 1rem;
+}
+
+.gallery-arrow:last-of-type {
+  right: 1rem;
+}
+
+.image-transition {
+  transition: opacity 0.3s ease;
 }
 
 /*Flechas galeria*/
