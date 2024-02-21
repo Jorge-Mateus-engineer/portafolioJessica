@@ -60,8 +60,9 @@ html::-webkit-scrollbar-thumb {
 
 .nav-name {
   font-size: 3rem;
-  padding-left: 3rem;
+  padding-left: 1rem;
   letter-spacing: 3px;
+  color: #803234;
 }
 
 .left-nav {
@@ -89,7 +90,6 @@ html::-webkit-scrollbar-thumb {
 .nav-item a:link,
 .nav-item a:visited {
   text-decoration: none;
-  /* color: var(--main-color-shade1); */
   color: #803234;
 }
 
@@ -190,14 +190,15 @@ html::-webkit-scrollbar-thumb {
 .titulo-fotografia {
   position: absolute;
   font-size: 5rem;
-  top: 50%;
+  top: 70%;
   transform: translateY(-50%);
-  left: 2rem;
-  color: var(--greys-color);
-  background-color: var(--main-color-shade1);
+  left: 5rem;
+  color: var(--main-color-shade1);
+  border-radius: 15px;
   display: inline-block;
   z-index: 4;
   transition: all 0.3s;
+  text-shadow: 5px 5px black;
 }
 
 .project > img {
@@ -209,7 +210,7 @@ html::-webkit-scrollbar-thumb {
 
 .p1 {
   margin-right: -20%;
-  background: url("../img/Ilustración/Paisaje-rosa.jpg");
+  background: url("../img/Diseno/Carteles/Jessica\ Peña\ -\ CARTEL\ CUBANO.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -219,7 +220,7 @@ html::-webkit-scrollbar-thumb {
   border-radius: 34% 0% 0% 38% / 41% 10% 10% 46%;
   width: 100rem;
   z-index: 2;
-  background: url("../img/Ilustración/Cables.jpg");
+  background: url("../img/Ilustración/Mapache.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -227,7 +228,7 @@ html::-webkit-scrollbar-thumb {
 .p3 {
   z-index: 3;
   border-radius: 34% 0% 0% 38% / 41% 10% 10% 46%;
-  background: url("../img/Ilustración/Bird-poses.jpg");
+  background: url("../img/Fotografia/_MG_7207.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -239,7 +240,7 @@ html::-webkit-scrollbar-thumb {
 
 .icon {
   position: absolute;
-  width: 26%;
+  width: 20%;
   z-index: 6;
   top: 50%;
   transform: translateY(-50%);
