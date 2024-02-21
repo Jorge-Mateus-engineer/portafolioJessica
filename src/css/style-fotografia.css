@@ -56,20 +56,6 @@ html {
   overflow: auto;
 }
 
-.img-container::-webkit-scrollbar {
-  width: 1rem;
-  height: 0;
-}
-
-.img-container::-webkit-scrollbar-track {
-  background-color: transparent;
-}
-
-.img-container::-webkit-scrollbar-thumb {
-  background-color: var(--main-color);
-  border-radius: 6px;
-}
-
 .gallery-arrow {
   display: inline-block;
   position: absolute;
