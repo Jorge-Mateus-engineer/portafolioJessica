@@ -70,10 +70,10 @@ const hideGallery = (e) => {
 const changePage = (e) => {
   let src;
   let newIndex;
-  if (e.target.classList[1] == "left") {
+  if (e.target.classList[1] == "left" || e.key == "ArrowLeft") {
     newIndex = galleryIndex - 1 <= 0 ? imageList.length : galleryIndex - 1;
     galleryIndex = galleryIndex - 1 <= 0 ? imageList.length : galleryIndex - 1;
-  } else {
+  } else if (e.target.classList[1] == "right" || e.key == "ArrowRight") {
     newIndex = galleryIndex + 1 >= imageList.length ? 1 : galleryIndex + 1;
     galleryIndex = galleryIndex + 1 >= imageList.length ? 1 : galleryIndex + 1;
   }
@@ -189,6 +189,8 @@ document.addEventListener("keydown", (e) => {
   if (!overlay.classList.contains("hidden-photo")) {
     if (e.key === "Escape") {
       hideGallery(e);
+    } else if (e.key == "ArrowLeft" || e.key == "ArrowRight") {
+      changePage(e);
     }
   }
 });

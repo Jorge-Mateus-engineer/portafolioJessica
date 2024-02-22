@@ -144,7 +144,13 @@ html::-webkit-scrollbar-thumb {
   display: flex;
 }
 
-.insta-link:hover {
+.insta-link a:link,
+.insta-link a:visited {
+  text-decoration: none;
+}
+
+.insta-link a:hover,
+.insta-link a:active {
   text-decoration: underline;
 }
 
@@ -152,6 +158,7 @@ html::-webkit-scrollbar-thumb {
   height: 2rem;
   width: auto;
   padding-right: 5px;
+  stroke: rgb(85, 26, 139);
 }
 
 /* Projects */
