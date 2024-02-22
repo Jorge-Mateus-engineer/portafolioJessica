@@ -2,16 +2,17 @@ import * as calendarios from "../img/Diseno/Calendarios/*.jpg";
 import * as carteles from "../img/Diseno/Carteles/*.jpg";
 import * as logos from "../img/Diseno/*.jpg";
 
+const main = document.querySelector("main");
 const cards = document.querySelectorAll(".project-card");
 const imgContainer = document.querySelector(".img-container");
 const overlay = document.querySelector(".overlay-diseno");
 
 const showGallery = function (e) {
   overlay.classList.remove("hidden-diseno");
-  window.scrollTop = 0;
+  overlay.scrollTop = 0;
   if (window.screen.width <= 832) {
-    window.scrollTo(0, 1);
-    overlay.style.height = `${document.body.clientHeight}px`;
+    overlay.style.top = `${0}px`;
+    main.style.touchAction = "none";
   }
   const content = e.target.parentNode.dataset.content;
 
@@ -49,6 +50,18 @@ cards.forEach((c) => {
 
 overlay.addEventListener("click", (e) => {
   e.stopPropagation();
+  if (window.screen.width <= 832) {
+    overlay.style.top = null;
+    main.style.touchAction = null;
+  }
   overlay.classList.add("hidden-diseno");
   imgContainer.innerHTML = "";
+});
+
+window.addEventListener("popstate", function (event) {
+  event.preventDefault();
+  // This event will be triggered when the user presses the "back" button
+  console.log("Back button pressed");
+  // You can handle the back button press here
+  // For example, you might want to go back to the previous page or show a confirmation
 });

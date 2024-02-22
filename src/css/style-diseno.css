@@ -64,6 +64,8 @@
   height: 100vh;
   background-color: var(--greys-color-transparent);
   overflow-y: scroll;
+  /*IMPORTANT: para prevenir en celular que se scrolle a traves del overlay*/
+  overscroll-behavior: contain;
 }
 
 .overlay-diseno::-webkit-scrollbar {
