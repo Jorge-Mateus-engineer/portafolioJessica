@@ -110,6 +110,10 @@ html::-webkit-scrollbar-thumb {
   border-radius: 5px;
 }
 
+.mobile-nav-btn {
+  display: none;
+}
+
 /*Dropdown links de insta*/
 
 .insta-logo {
@@ -206,6 +210,10 @@ html::-webkit-scrollbar-thumb {
   z-index: 4;
   transition: all 0.3s;
   text-shadow: 5px 5px black;
+}
+
+.titulo-diseno {
+  left: 2rem;
 }
 
 .project > img {

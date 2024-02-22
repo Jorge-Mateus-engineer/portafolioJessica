@@ -7,44 +7,45 @@ const dropdown = document.querySelector(".dropdown-insta");
 
 //Event listeners para las animaciones basicas
 
-diseno.addEventListener("mouseover", (e) => {
-  ilustracion.style.transform = "translateX(10%)";
-  fotografia.style.transform = "translateX(10%)";
-  ilustracion.style.filter = "blur(5px)";
-  fotografia.style.filter = "blur(5px)";
-});
+if (window.screen.width >= 736) {
+  diseno.addEventListener("mouseover", (e) => {
+    ilustracion.style.transform = "translateX(10%)";
+    fotografia.style.transform = "translateX(10%)";
+    ilustracion.style.filter = "blur(5px)";
+    fotografia.style.filter = "blur(5px)";
+  });
 
-diseno.addEventListener("mouseout", () => {
-  ilustracion.style.transform = "translateX(0)";
-  fotografia.style.transform = "translateX(0)";
-  ilustracion.style.filter = null;
-  fotografia.style.filter = null;
-});
+  diseno.addEventListener("mouseout", () => {
+    ilustracion.style.transform = "translateX(0)";
+    fotografia.style.transform = "translateX(0)";
+    ilustracion.style.filter = null;
+    fotografia.style.filter = null;
+  });
 
-ilustracion.addEventListener("mouseover", () => {
-  fotografia.style.transform = "translateX(10%)";
-  diseno.style.filter = "blur(5px)";
-  fotografia.style.filter = "blur(5px)";
-});
+  ilustracion.addEventListener("mouseover", () => {
+    fotografia.style.transform = "translateX(10%)";
+    diseno.style.filter = "blur(5px)";
+    fotografia.style.filter = "blur(5px)";
+  });
 
-ilustracion.addEventListener("mouseout", () => {
-  fotografia.style.transform = "translateX(0)";
-  diseno.style.filter = null;
-  fotografia.style.filter = null;
-});
+  ilustracion.addEventListener("mouseout", () => {
+    fotografia.style.transform = "translateX(0)";
+    diseno.style.filter = null;
+    fotografia.style.filter = null;
+  });
 
-fotografia.addEventListener("mouseover", () => {
-  fotografia.style.transform = "translateX(-15%)";
-  diseno.style.filter = "blur(5px)";
-  ilustracion.style.filter = "blur(5px)";
-});
+  fotografia.addEventListener("mouseover", () => {
+    fotografia.style.transform = "translateX(-15%)";
+    diseno.style.filter = "blur(5px)";
+    ilustracion.style.filter = "blur(5px)";
+  });
 
-fotografia.addEventListener("mouseout", () => {
-  fotografia.style.transform = "translateX(0)";
-  diseno.style.filter = null;
-  ilustracion.style.filter = null;
-});
-
+  fotografia.addEventListener("mouseout", () => {
+    fotografia.style.transform = "translateX(0)";
+    diseno.style.filter = null;
+    ilustracion.style.filter = null;
+  });
+}
 //Event listeners para los hipervinculos
 
 ilustracion.addEventListener("click", (e) => {

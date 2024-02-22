@@ -1,0 +1,115 @@
+/*1568px*/
+@media (max-width: 98em) {
+  .titulo-diseno,
+  .titulo-ilustracion,
+  .titulo-fotografia {
+    font-size: 4rem;
+    left: 2.5rem;
+  }
+}
+
+/*1264px*/
+@media (max-width: 79em) {
+  .titulo-diseno {
+    width: 10rem;
+    text-wrap: wrap;
+  }
+
+  .projects-container {
+    padding: 3rem;
+  }
+
+  .icon {
+    right: 3rem;
+  }
+}
+
+/*896px*/
+@media (max-width: 56em) {
+  .titulo-ilustracion,
+  .titulo-fotografia {
+    font-size: 3rem;
+    left: 2rem;
+  }
+
+  .titulo-diseno {
+    font-size: 3rem;
+    left: 1rem;
+  }
+
+  .p1 {
+    margin-right: -24%;
+  }
+
+  .p2,
+  .p3 {
+    border-radius: 40% 0% 0% 40% / 50% 10% 10% 50%;
+  }
+}
+
+/*736px*/
+@media (max-width: 46em) {
+  .projects {
+    flex-direction: column;
+  }
+
+  .p1,
+  .p2,
+  .p3 {
+    margin-right: 0;
+    background-size: 75% auto;
+    background-repeat: no-repeat;
+    background-position: left;
+  }
+
+  .p2,
+  .p3 {
+    border-radius: 0;
+  }
+
+  .p1:hover,
+  .p1:active,
+  .p2:hover,
+  .p2:active,
+  .p3:hover,
+  .p3:active {
+    background-size: 100%;
+  }
+
+  .titulo-diseno,
+  .titulo-ilustracion,
+  .titulo-fotografia {
+    font-size: 4rem;
+    left: 2.5rem;
+    width: auto;
+  }
+
+  .icon {
+    top: auto;
+    bottom: 3rem;
+    transform: translateY(0);
+    width: 15%;
+  }
+
+  .icon::after {
+    border-bottom-left-radius: 0;
+  }
+}
+
+/*544px*/
+@media (max-width: 34em) {
+  .p1,
+  .p2,
+  .p3 {
+    background-size: 53% auto;
+  }
+}
+
+/*400px*/
+@media (max-width: 25em) {
+  .p1,
+  .p2,
+  .p3 {
+    background-size: 38% auto;
+  }
+}
