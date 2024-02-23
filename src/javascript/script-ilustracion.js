@@ -328,8 +328,5 @@ imagenGaleria.addEventListener("touchend", (e) => {
       galleryIndex = changePage(0, galleryIndex);
     }
   }
-
-  console.log(finalTouch - initialTouch);
-  console.log(window.screen.width * 0.15);
   addTextToGallery();
 });
