@@ -225,7 +225,7 @@ html::-webkit-scrollbar-thumb {
 
 .p1 {
   margin-right: -20%;
-  background: url("../img/Diseno/Carteles/Jessica\ Peña\ -\ CARTEL\ CUBANO.jpg");
+  background: url("../img/Diseno/Carteles/4.webp");
   background-size: cover;
   background-position: center;
 }
@@ -243,7 +243,7 @@ html::-webkit-scrollbar-thumb {
 .p3 {
   z-index: 3;
   border-radius: 34% 0% 0% 38% / 41% 10% 10% 46%;
-  background: url("../img/Fotografia/_MG_7207.jpg");
+  background: url("../img/Fotografia/4.webp");
   background-size: cover;
   background-position: center;
 }

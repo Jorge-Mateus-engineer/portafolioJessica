@@ -1,5 +1,5 @@
 import * as calendarios from "../img/Diseno/Calendarios/*.jpg";
-import * as carteles from "../img/Diseno/Carteles/*.jpg";
+import * as carteles from "../img/Diseno/Carteles/*.webp";
 import * as logos from "../img/Diseno/*.jpg";
 
 const main = document.querySelector("main");
