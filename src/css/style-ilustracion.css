@@ -170,7 +170,7 @@ div.overlay-gallery {
 
 .img-desc {
   padding: 0 3rem;
-  width: 30%;
+  width: 40%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -178,8 +178,8 @@ div.overlay-gallery {
 
 .img-text {
   color: #803234;
-  font-size: 3rem;
-  padding: 2rem;
+  font-size: 2.5rem;
+  padding: 1.5rem;
   border-radius: 20px;
   background-color: #daf6f2;
 }

@@ -54,7 +54,6 @@ const showGallery = (e) => {
 };
 
 const hideGallery = (e) => {
-  console.log(e.target.tagName);
   if (
     e.target.tagName === "IMG" ||
     e.target.tagName === "svg" ||
@@ -77,7 +76,7 @@ const changePage = (e) => {
     newIndex = galleryIndex + 1 >= imageList.length ? 1 : galleryIndex + 1;
     galleryIndex = galleryIndex + 1 >= imageList.length ? 1 : galleryIndex + 1;
   }
-
+  console.log(newIndex);
   imageList.forEach((img) => {
     if (parseInt(img.dataset.index) == newIndex) {
       src = img.src;

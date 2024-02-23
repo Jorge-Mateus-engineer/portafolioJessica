@@ -16,6 +16,10 @@ const imagenGaleria = document.getElementById("gallery-img");
 const pagination = document.querySelector(".pagination");
 const flechasGaleria = document.querySelectorAll(".gallery-arrow");
 const textoGaleria = document.querySelector(".img-text");
+const columnOne = document.querySelector(".col1");
+const columnTwo = document.querySelector(".col2");
+const columnThree = document.querySelector(".col3");
+const columns = [columnOne, columnTwo, columnThree];
 let pageIcons;
 let galleryIndex;
 
@@ -71,26 +75,61 @@ const data = [
       "En una época tan especial como lo es navidad, frecuentemente los retratos y la familia quiere ser inmortalizada. Este retrato fue hecho en Procreate con diferentes pinceles procurando ser fieles a los rasgos de cada uno de los integrantes, de sus gustos y las afinidades que tienen entre sí.",
   },
   {
-    index: 12,
+    index: 11,
     texto:
       "Utilizando técnicas tradicionales como la pintura acrilica con tecnica de difumino mojado sobre mojado, se consiguen gradaciones de color para conseguir profundidad y textura en la imagen. Este juguetón amigo está sacando la lengua cual niño pequeño siendo un gesto enternecedor.",
   },
   {
-    index: 13,
+    index: 14,
     texto:
       "En un ejercicio de hacer evidente la personalidad y los gustos de esta persona. Dos monitos, uno durmiendo y otro en contacto directo con la cara del personaje da a entender la relación que tienen y reflejan dos partes de la persona que pueden no verse solo con una foto a su cara.",
   },
   {
-    index: 11,
+    index: 13,
     texto:
       "Al ir de viaje y no podemos ver el paisaje ni siquiera a lo lejos, veo solamente el clima interrumpido por los postes y sus fieles acompañantes los cables. El horizonte está altamente distorsionado por el clima. De manera tradicional la pintura está hecha en acrílico sobre papel Canson con textura.",
   },
   {
-    index: 14,
+    index: 12,
     texto:
       "A modo caricatura con técnica tradicional, registrado en el tiempo, hay una chica que además de su cabello largo y saco, tiene curiosamente un tapabocas. En tinta china con técnica de pincel húmedo sobre papel acuarela está plasmada ella de manera rápida y espontánea.",
   },
 ];
+
+const initGallery = () => {
+  /*Ordenar imagenes por indice*/
+  const imageArray = Array.prototype.slice.call(imagenes, 0).sort((a, b) => {
+    const indexA = parseInt(a.dataset.index);
+    const indexB = parseInt(b.dataset.index);
+    return indexA - indexB;
+  });
+  /*Remover contenido de columnas */
+  columns.forEach((c) => (c.innerHTML = ""));
+
+  if (window.screen.width > 896) {
+    imageArray.forEach((img, i) => {
+      const parent = columns[i % columns.length];
+      parent.appendChild(img);
+    });
+  }
+  if (window.screen.width <= 896 && window.screen.width > 592) {
+    /* 2 columnas */
+    imageArray.forEach((img) => {
+      if ((img.dataset.index * 1) % 2 != 0) {
+        columnOne.appendChild(img);
+      } else {
+        columnTwo.appendChild(img);
+      }
+    });
+  }
+
+  /*1 columna */
+  if (window.screen.width <= 592) {
+    imageArray.forEach((img) => {
+      columnOne.appendChild(img);
+    });
+  }
+};
 
 //Quitar pagina de carga cuando las imagenes esten listas
 
@@ -102,6 +141,7 @@ setTimeout(() => {
 //Crear los iconos de paginacion con base a la cantidad total de imagenes
 
 const addPagination = () => {
+  if (window.screen.width <= 896) return;
   let i = imagenes.length;
   imagenes.forEach(() => {
     pagination.insertAdjacentHTML(
@@ -264,4 +304,29 @@ document.addEventListener("keydown", (e) => {
       addTextToGallery();
     }
   }
+});
+
+initGallery();
+
+window.addEventListener("resize", initGallery);
+
+/*Gestos de la galeria en pantallas tactiles */
+
+let initialTouch;
+let finalTouch;
+
+imagenGaleria.addEventListener("touchstart", (e) => {
+  e.preventDefault();
+  initialTouch = e.changedTouches[0].clientX;
+});
+
+imagenGaleria.addEventListener("touchend", (e) => {
+  e.preventDefault();
+  finalTouch = e.changedTouches[0].clientX;
+  if (finalTouch < initialTouch) {
+    galleryIndex = changePage(1, galleryIndex);
+  } else {
+    galleryIndex = changePage(0, galleryIndex);
+  }
+  addTextToGallery();
 });
