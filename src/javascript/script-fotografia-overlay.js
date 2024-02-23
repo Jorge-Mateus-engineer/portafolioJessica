@@ -1,3 +1,4 @@
+const track = document.getElementById("image-track");
 const imageList = document.querySelectorAll(".image");
 const overlay = document.querySelector(".gallery-overlay");
 const imgContainer = document.querySelector(".img-container");
@@ -169,7 +170,7 @@ function handleMouseUp() {
 }
 
 imageList.forEach((image) => {
-  image.addEventListener("click", showGallery);
+  image.addEventListener("mouseup", showGallery);
 });
 
 overlay.addEventListener("click", hideGallery);

@@ -27,11 +27,9 @@ html {
   display: flex;
   align-items: center;
   gap: 4rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(0%, -50%);
-  overflow: hidden;
+  width: auto;
+  margin: 8rem 0;
+  transform: translate(0%, 0%);
 }
 
 #image-track:hover {
