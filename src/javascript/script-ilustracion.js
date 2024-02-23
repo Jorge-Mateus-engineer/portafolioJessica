@@ -316,17 +316,20 @@ let initialTouch;
 let finalTouch;
 
 imagenGaleria.addEventListener("touchstart", (e) => {
-  e.preventDefault();
   initialTouch = e.changedTouches[0].clientX;
 });
 
 imagenGaleria.addEventListener("touchend", (e) => {
-  e.preventDefault();
   finalTouch = e.changedTouches[0].clientX;
-  if (finalTouch < initialTouch) {
-    galleryIndex = changePage(1, galleryIndex);
-  } else {
-    galleryIndex = changePage(0, galleryIndex);
+  if (Math.abs(finalTouch - initialTouch) >= window.screen.width * 0.15) {
+    if (finalTouch < initialTouch) {
+      galleryIndex = changePage(1, galleryIndex);
+    } else {
+      galleryIndex = changePage(0, galleryIndex);
+    }
   }
+
+  console.log(finalTouch - initialTouch);
+  console.log(window.screen.width * 0.15);
   addTextToGallery();
 });
