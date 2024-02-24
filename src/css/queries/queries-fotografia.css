@@ -1,0 +1,37 @@
+/*1264px*/
+@media (max-width: 79em) {
+  .buttons {
+    width: 15%;
+  }
+}
+
+/*896px*/
+@media (max-width: 56em) {
+  #image-track {
+    height: 40rem;
+  }
+
+  #image-track > img {
+    width: 30rem;
+    object-position: center;
+  }
+
+  .buttons {
+    height: 4rem;
+  }
+}
+
+/*736px*/
+@media (max-width: 46em) {
+  .buttons {
+    width: 20%;
+    margin-bottom: 1rem;
+  }
+}
+
+/*544px*/
+@media (max-width: 34em) {
+  .buttons {
+    width: 40%;
+  }
+}

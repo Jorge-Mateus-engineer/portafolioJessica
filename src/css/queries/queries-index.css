@@ -67,15 +67,6 @@
     border-radius: 0;
   }
 
-  .p1:hover,
-  .p1:active,
-  .p2:hover,
-  .p2:active,
-  .p3:hover,
-  .p3:active {
-    background-size: 100%;
-  }
-
   .titulo-diseno,
   .titulo-ilustracion,
   .titulo-fotografia {

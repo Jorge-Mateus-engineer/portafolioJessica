@@ -1,23 +1,30 @@
 const track = document.getElementById("image-track");
 const buttons = document.querySelectorAll(".arrow");
 
-const handleOnDown = (e) => (track.dataset.mouseDownAt = e.clientX);
+const handleOnDown = (e) => {
+  track.dataset.mouseDownAt = e.clientX;
+};
 
-const handleOnUp = () => {
+const handleOnUp = (e) => {
   track.dataset.mouseDownAt = "0";
   track.dataset.prevPercentage = track.dataset.percentage;
 };
 
 const handleOnMove = (e) => {
   if (track.dataset.mouseDownAt === "0") return;
+  const movementFactor = window.screen.width > 896 ? 0.6 : 0.15;
 
-  const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
-    maxDelta = window.innerWidth / 2;
+  const mouseDelta =
+    (parseFloat(track.dataset.mouseDownAt) - e.clientX) * movementFactor;
+  const maxDelta = window.innerWidth / 2;
 
-  const percentage = (mouseDelta / maxDelta) * -100,
-    nextPercentageUnconstrained =
-      parseFloat(track.dataset.prevPercentage) + percentage,
-    nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
+  const percentage = (mouseDelta / maxDelta) * -100;
+  const nextPercentageUnconstrained =
+    parseFloat(track.dataset.prevPercentage) + percentage;
+  const nextPercentage = Math.max(
+    Math.min(nextPercentageUnconstrained, 0),
+    -100
+  );
 
   track.dataset.percentage = nextPercentage;
 
