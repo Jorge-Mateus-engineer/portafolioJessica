@@ -170,7 +170,7 @@ function handleMouseUp() {
 }
 
 imageList.forEach((image) => {
-  image.addEventListener("mouseup", showGallery);
+  image.addEventListener("click", showGallery);
 });
 
 overlay.addEventListener("click", hideGallery);

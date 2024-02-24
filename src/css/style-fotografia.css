@@ -15,6 +15,11 @@ html {
   background-color: black;
 }
 
+.track-container {
+  position: relative;
+  height: calc(100vh - 8rem);
+}
+
 #image-track > img {
   width: 40rem;
   height: 50rem;
@@ -27,9 +32,11 @@ html {
   display: flex;
   align-items: center;
   gap: 4rem;
-  width: auto;
-  margin: 8rem 0;
-  transform: translate(0%, 0%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(0%, -50%);
+  overflow: hidden;
 }
 
 #image-track:hover {
@@ -148,15 +155,17 @@ html {
   width: 10%;
   margin-bottom: 2rem;
   display: flex;
+  gap: 25%;
+  height: 5rem;
   justify-content: space-around;
 }
 
 .arrow {
-  height: 5rem;
-  width: 5rem;
+  height: 100%;
+  aspect-ratio: 1 / 1;
   stroke: black;
   background-color: white;
-  border-radius: 50%;
+  border-radius: 50px;
 }
 
 .arrow:hover {
