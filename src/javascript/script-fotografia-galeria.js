@@ -35,13 +35,15 @@ const handleOnMove = (e) => {
     { duration: 1200, fill: "forwards" }
   );
 
-  for (const image of track.getElementsByClassName("image")) {
-    image.animate(
-      {
-        objectPosition: `${100 + nextPercentage}% center`,
-      },
-      { duration: 1200, fill: "forwards" }
-    );
+  if (movementFactor == 0.6) {
+    for (const image of track.getElementsByClassName("image")) {
+      image.animate(
+        {
+          objectPosition: `${100 + nextPercentage}% center`,
+        },
+        { duration: 1200, fill: "forwards" }
+      );
+    }
   }
 };
 
