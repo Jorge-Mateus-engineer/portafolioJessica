@@ -34,7 +34,6 @@ const handleOnMove = (e) => {
     },
     { duration: 1200, fill: "forwards" }
   );
-
   if (movementFactor == 0.6) {
     for (const image of track.getElementsByClassName("image")) {
       image.animate(
@@ -62,16 +61,19 @@ const handleButtonClick = (e) => {
     { duration: 1200, fill: "forwards" }
   );
 
-  for (const image of track.getElementsByClassName("image")) {
-    image.animate(
-      {
-        objectPosition: `${100 + displacement}% center`,
-      },
-      { duration: 1200, fill: "forwards" }
-    );
-  }
   track.dataset.percentage = `${displacement}`;
   track.dataset.prevPercentage = currentPercentage;
+
+  if (window.screen.width > 896) {
+    for (const image of track.getElementsByClassName("image")) {
+      image.animate(
+        {
+          objectPosition: `${100 + displacement}% center`,
+        },
+        { duration: 1200, fill: "forwards" }
+      );
+    }
+  }
 };
 
 buttons.forEach((b) => b.addEventListener("click", handleButtonClick));

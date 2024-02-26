@@ -67,25 +67,22 @@ const hideGallery = (e) => {
   resetZoomParams();
 };
 
-const changePage = (e) => {
+const changePage = (direction) => {
   let src;
-  let newIndex;
-  if (e.target.classList[1] == "left" || e.key == "ArrowLeft") {
-    newIndex = galleryIndex - 1 <= 0 ? imageList.length : galleryIndex - 1;
+  if (direction == 0) {
     galleryIndex = galleryIndex - 1 <= 0 ? imageList.length : galleryIndex - 1;
-  } else if (e.target.classList[1] == "right" || e.key == "ArrowRight") {
-    newIndex = galleryIndex + 1 >= imageList.length ? 1 : galleryIndex + 1;
+  } else if (direction == 1) {
     galleryIndex = galleryIndex + 1 >= imageList.length ? 1 : galleryIndex + 1;
   }
-  console.log(newIndex);
+  removeDimensions();
   imageList.forEach((img) => {
-    if (parseInt(img.dataset.index) == newIndex) {
-      src = img.src;
+    if (parseInt(img.dataset.index) == galleryIndex) {
+      galleryImg.src = img.src;
     }
   });
 
-  galleryImg.src = src;
-  removeDimensions();
+  // galleryImg.src = src;
+
   setDimensions();
   resetZoomParams();
 };
@@ -177,7 +174,27 @@ overlay.addEventListener("click", hideGallery);
 
 overlay.addEventListener("mouseover", handleMouseOver);
 
-galleryButtons.forEach((b) => b.addEventListener("click", changePage));
+galleryButtons.forEach((b) =>
+  b.addEventListener("click", (e) => {
+    let pathDir;
+    if (e.target.tagName === "path") {
+      pathDir = e.target.parentNode.classList[1];
+    }
+    if (
+      e.target.classList[1] == "left" ||
+      pathDir == "left" ||
+      e.key == "ArrowLeft"
+    ) {
+      changePage(0);
+    } else if (
+      e.target.classList[1] == "right" ||
+      pathDir == "right" ||
+      e.key == "ArrowRight"
+    ) {
+      changePage(1);
+    }
+  })
+);
 
 imgContainer.addEventListener("mousedown", handleMouseDown);
 
@@ -185,12 +202,37 @@ imgContainer.addEventListener("mousemove", handleMouseMove);
 
 imgContainer.addEventListener("mouseup", handleMouseUp);
 
+if (window.screen.width <= 736) {
+  let initialTouch;
+  let finalTouch;
+  let touchCount;
+
+  overlay.addEventListener("touchstart", (e) => {
+    touchCount = e.touches.length;
+    initialTouch = e.changedTouches[0].clientX;
+  });
+
+  overlay.addEventListener("touchend", (e) => {
+    if (touchCount > 1) return;
+    finalTouch = e.changedTouches[0].clientX;
+    if (Math.abs(finalTouch - initialTouch) >= window.screen.width * 0.15) {
+      if (finalTouch < initialTouch) {
+        changePage(1);
+      } else {
+        changePage(0);
+      }
+    }
+  });
+}
+
 document.addEventListener("keydown", (e) => {
   if (!overlay.classList.contains("hidden-photo")) {
     if (e.key === "Escape") {
       hideGallery(e);
-    } else if (e.key == "ArrowLeft" || e.key == "ArrowRight") {
-      changePage(e);
+    } else if (e.key == "ArrowLeft") {
+      changePage(0);
+    } else if (e.key == "ArrowRight") {
+      changePage(1);
     }
   }
 });

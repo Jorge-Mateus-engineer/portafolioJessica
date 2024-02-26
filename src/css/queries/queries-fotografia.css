@@ -27,6 +27,14 @@
     width: 20%;
     margin-bottom: 1rem;
   }
+
+  #image-track {
+    left: 4rem;
+  }
+
+  .gallery-arrow {
+    display: none;
+  }
 }
 
 /*544px*/
