@@ -27,72 +27,72 @@ const data = [
   {
     index: 1,
     texto:
-      "Algo que vale la pena decir A veces no hay mucho más que decir que estás cansada y necesitas un empujón, por supuesto esto no debería ser motivo para dejar de estar estilizada y a la moda. Esta ilustración fue realizada en técnica de collage con trozos de periódico y algunos trozos de revista sobre cartulina iris. ",
+      "A veces no hay mucho que decir además de que estás cansada y necesitas un empujón, pero esto no debería ser motivo para dejar de estar estilizada y a la moda. Esta ilustración se realizó en técnica de collage con trozos de periódico y algunos fragmentos de revista sobre cartulina iris.",
   },
   {
     index: 2,
     texto:
-      "Este divertido pingüino fue hecho con referencia fotográfica encontrada en instagram realizada con técnica de acuarela usando puntillismo, trazos largos y bolígrafos. ",
+      "Este divertido pingüino fue creado con una referencia fotográfica encontrada en Instagram. Utilicé la técnica de acuarela con puntillismo, trazos largos y bolígrafos.",
   },
   {
     index: 3,
     texto:
-      "Pintura sobre cartón cartulina con pintura Tipo 1 utilizando colores complementarios de cálidos y fríos en alto contraste con el fondo de la imagen. ",
+      "Pintura sobre cartón cartulina con pintura Tipo 1 utilizando colores complementarios cálidos y fríos en alto contraste con el fondo de la imagen.",
   },
   {
     index: 4,
     texto:
-      "En algún lugar llegó el otoño con todas las variantes de marrón y naranja, permitiendo que el sol ilumine el lugar. Un ambiente perfecto para contemplar el paisaje. Pintura hecha con acuarelas sobre papel corrugado canson. ",
+      "En algún lugar llegó el otoño iluminando el lugar y todos los diferentes tonos de marrón y naranja, Un ambiente perfecto para contemplar el paisaje. Pintura hecha con acuarelas sobre papel corrugado Canson.",
   },
   {
     index: 5,
     texto:
-      "Cabeza de zorro dibujada con esferos de colores marca Bic con técnica de línea sobre línea.",
+      "Cabeza de zorro dibujada con bolígrafo de punta de balín con técnica de línea sobre línea desde colores claros a los más oscuros. ",
   },
   {
     index: 6,
     texto:
-      "Pintura hecha con acuarelas sobre papel acuarela utilizando largos brochazos y puntillismo como técnica para dar textura a la imagen. La composición fue tomada de una imagen de referencia. ",
+      "Pintura hecha con acuarelas utilizando técnica de largas pinceladas y puntillismo para dar textura a la imagen. La composición se tomó de una imagen de referencia.",
   },
   {
     index: 7,
     texto:
-      "Era una vez un cuento de un conejo de nariz roja que saltaba por ahí en los jardines robando zanahorias. Collage utilizando revistas con imágenes de diferentes materiales sobre cartulina iris fucsia. ",
+      "Érase una vez un conejo de nariz roja que saltaba por ahí en los jardines robando zanahorias. Collage utilizando revistas con imágenes de diferentes materiales sobre cartulina iris.",
   },
   {
     index: 8,
     texto:
-      "Bajo la iluminación de un atardecer sobre una costa de Italia hay una iglesia que es acariciada por el sol cada día. Imagen hecha con tiza sobre cartulina texturizada color fucsia",
+      "Bajo la luz de un atardecer sobre una costa de Italia, hay una iglesia que es acariciada por el sol cada día. Imagen hecha con tiza sobre cartulina texturizada.",
   },
   {
     index: 9,
     texto:
-      "Utilizando como inspiracion el canario coronado amarillo y teniendo en cuenta una gama de colores brillantes y calidos, se hizo el rediseño de Nico para ser la nueva mascota del mundial de fútbol de Brasil.",
+      "Utilizando como inspiracion el canario coronado amarillo, se hizo el rediseño de Nico para ser la nueva mascota del mundial de fútbol de Brasil. Un divertido amiguito que refleja el dinamismo que tiene el mundial con colores característicos del lugar.",
   },
   {
     index: 10,
     texto:
-      "En una época tan especial como lo es navidad, frecuentemente los retratos y la familia quiere ser inmortalizada. Este retrato fue hecho en Procreate con diferentes pinceles procurando ser fieles a los rasgos de cada uno de los integrantes, de sus gustos y las afinidades que tienen entre sí.",
+      "En una época tan especial como lo es navidad, frecuentemente la familia quiere ser inmortalizada. Este retrato fue hecho en Procreate con diferentes pinceles procurando ser fieles a las características de cada uno de los integrantes, de sus gustos y las afinidades que tienen entre sí con la calidez que tiene esta época del año.",
   },
   {
     index: 11,
     texto:
-      "Utilizando técnicas tradicionales como la pintura acrilica con tecnica de difumino mojado sobre mojado, se consiguen gradaciones de color para conseguir profundidad y textura en la imagen. Este juguetón amigo está sacando la lengua cual niño pequeño siendo un gesto enternecedor.",
+      "Utilizando técnicas tradicionales como la pintura acrilica con tecnica de difumino mojado sobre mojado, se consiguen gradaciones de color para conseguir profundidad y textura en la imagen. Este juguetón amigo está sacando la lengua tal como hacen muchos niños cuando juegan.",
   },
   {
     index: 14,
     texto:
-      "En un ejercicio de hacer evidente la personalidad y los gustos de esta persona. Dos monitos, uno durmiendo y otro en contacto directo con la cara del personaje da a entender la relación que tienen y reflejan dos partes de la persona que pueden no verse solo con una foto a su cara.",
+      "En un ejercicio de hacer evidente la personalidad y los gustos de esta persona. Dos monitos, uno durmiendo y otro en contacto directo con la cara del personaje da a entender la relación que tienen y reflejan dos partes de la persona que pueden no verse solo con una foto de su cara.",
   },
   {
     index: 13,
     texto:
-      "Al ir de viaje y no podemos ver el paisaje ni siquiera a lo lejos, veo solamente el clima interrumpido por los postes y sus fieles acompañantes los cables. El horizonte está altamente distorsionado por el clima. De manera tradicional la pintura está hecha en acrílico sobre papel Canson con textura.",
+      "Al ir de viaje y no poder ver el paisaje ni siquiera a lo lejos, veo solamente el clima interrumpido por los postes y los cables como sus fieles acompañantes. El horizonte está altamente distorsionado por el clima. La pintura está hecha de manera tradicional en acrílico sobre papel Canson con textura.",
   },
   {
     index: 12,
     texto:
-      "A modo caricatura con técnica tradicional, registrado en el tiempo, hay una chica que además de su cabello largo y saco, tiene curiosamente un tapabocas. En tinta china con técnica de pincel húmedo sobre papel acuarela está plasmada ella de manera rápida y espontánea.",
+      "A modo caricatura con técnica tradicional, hay una chica que además de su cabello largo y saco, tiene curiosamente un tapabocas. En tinta china con técnica de pincel húmedo sobre papel acuarela está plasmada ella de manera rápida y espontánea.",
   },
 ];
 

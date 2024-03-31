@@ -72,7 +72,7 @@ const changePage = (direction) => {
   if (direction == 0) {
     galleryIndex = galleryIndex - 1 <= 0 ? imageList.length : galleryIndex - 1;
   } else if (direction == 1) {
-    galleryIndex = galleryIndex + 1 >= imageList.length ? 1 : galleryIndex + 1;
+    galleryIndex = galleryIndex + 1 > imageList.length ? 1 : galleryIndex + 1;
   }
   removeDimensions();
   imageList.forEach((img) => {
