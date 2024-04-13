@@ -6,19 +6,20 @@ const mobileNavList = document.querySelector(".mobile-nav-list");
 
 /*Navegacion mobil */
 
-mobileOverlay.addEventListener("touchstart", (e) => {
-  // e.preventDefault();
-  // e.stopPropagation();
-});
-
-navButton.addEventListener("touchstart", () => {
+const showNav = function () {
   mobileOverlay.classList.remove("hidden-nav-overlay");
   document.documentElement.style.overflow = "hidden";
   navButton.style.opacity = 0;
-});
+};
 
-closeMobileBtn.addEventListener("touchstart", () => {
+const hideNav = function () {
   mobileOverlay.classList.add("hidden-nav-overlay");
   document.documentElement.style.overflow = "";
   navButton.style.opacity = 1;
-});
+};
+
+navButton.addEventListener("touchstart", showNav);
+navButton.addEventListener("click", showNav);
+
+closeMobileBtn.addEventListener("touchstart", hideNav);
+closeMobileBtn.addEventListener("click", hideNav);
