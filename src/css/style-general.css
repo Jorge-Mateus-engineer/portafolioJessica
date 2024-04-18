@@ -75,6 +75,11 @@ body {
   align-items: center;
 }
 
+.left-nav:hover,
+.left-nav:active {
+  cursor: pointer;
+}
+
 .nav-list {
   display: flex;
   list-style: none;
