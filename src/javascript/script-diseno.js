@@ -62,6 +62,4 @@ window.addEventListener("popstate", function (event) {
   event.preventDefault();
   // This event will be triggered when the user presses the "back" button
   console.log("Back button pressed");
-  // You can handle the back button press here
-  // For example, you might want to go back to the previous page or show a confirmation
 });
