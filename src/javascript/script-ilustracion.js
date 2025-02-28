@@ -37,68 +37,74 @@ const data = [
   {
     index: 3,
     texto:
-      "Pintura sobre cartón cartulina con pintura Tipo 1 utilizando colores complementarios cálidos y fríos en alto contraste con el fondo de la imagen.",
+      "Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
   },
   {
     index: 4,
     texto:
-      "En algún lugar llegó el otoño iluminando el lugar y todos los diferentes tonos de marrón y naranja, Un ambiente perfecto para contemplar el paisaje. Pintura hecha con acuarelas sobre papel corrugado Canson.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
   },
   {
     index: 5,
     texto:
-      "Cabeza de zorro dibujada con bolígrafo de punta de balín con técnica de línea sobre línea desde colores claros a los más oscuros. ",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut ad veniam, quis nostrud exercitation ullamco laboris",
   },
   {
     index: 6,
     texto:
-      "Pintura hecha con acuarelas utilizando técnica de largas pinceladas y puntillismo para dar textura a la imagen. La composición se tomó de una imagen de referencia.",
+    "Cabeza de zorro dibujada con bolígrafo de punta de balín con técnica de línea sobre línea desde colores claros a los más oscuros. ",
   },
   {
     index: 7,
     texto:
-      "Érase una vez un conejo de nariz roja que saltaba por ahí en los jardines robando zanahorias. Collage utilizando revistas con imágenes de diferentes materiales sobre cartulina iris.",
+      "En un ejercicio de hacer evidente la personalidad y los gustos de esta persona. Dos monitos, uno durmiendo y otro en contacto directo con la cara del personaje da a entender la relación que tienen y reflejan dos partes de la persona que pueden no verse solo con una foto de su cara.",
   },
   {
     index: 8,
     texto:
-      "Bajo la luz de un atardecer sobre una costa de Italia, hay una iglesia que es acariciada por el sol cada día. Imagen hecha con tiza sobre cartulina texturizada.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
   },
   {
     index: 9,
     texto:
-      "Utilizando como inspiracion el canario coronado amarillo, se hizo el rediseño de Nico para ser la nueva mascota del mundial de fútbol de Brasil. Un divertido amiguito que refleja el dinamismo que tiene el mundial con colores característicos del lugar.",
+      "Utilizando técnicas tradicionales como la pintura acrilica con tecnica de difumino mojado sobre mojado, se consiguen gradaciones de color para conseguir profundidad y textura en la imagen. Este juguetón amigo está sacando la lengua tal como hacen muchos niños cuando juegan.",
   },
   {
     index: 10,
     texto:
-      "En una época tan especial como lo es navidad, frecuentemente la familia quiere ser inmortalizada. Este retrato fue hecho en Procreate con diferentes pinceles procurando ser fieles a las características de cada uno de los integrantes, de sus gustos y las afinidades que tienen entre sí con la calidez que tiene esta época del año.",
+    "Érase una vez un conejo de nariz roja que saltaba por ahí en los jardines robando zanahorias. Collage utilizando revistas con imágenes de diferentes materiales sobre cartulina iris.",
   },
   {
     index: 11,
     texto:
-      "Utilizando técnicas tradicionales como la pintura acrilica con tecnica de difumino mojado sobre mojado, se consiguen gradaciones de color para conseguir profundidad y textura en la imagen. Este juguetón amigo está sacando la lengua tal como hacen muchos niños cuando juegan.",
-  },
-  {
-    index: 14,
-    texto:
-      "En un ejercicio de hacer evidente la personalidad y los gustos de esta persona. Dos monitos, uno durmiendo y otro en contacto directo con la cara del personaje da a entender la relación que tienen y reflejan dos partes de la persona que pueden no verse solo con una foto de su cara.",
-  },
-  {
-    index: 13,
-    texto:
-      "Al ir de viaje y no poder ver el paisaje ni siquiera a lo lejos, veo solamente el clima interrumpido por los postes y los cables como sus fieles acompañantes. El horizonte está altamente distorsionado por el clima. La pintura está hecha de manera tradicional en acrílico sobre papel Canson con textura.",
+    "Utilizando como inspiracion el canario coronado amarillo, se hizo el rediseño de Nico para ser la nueva mascota del mundial de fútbol de Brasil. Un divertido amiguito que refleja el dinamismo que tiene el mundial con colores característicos del lugar.",
   },
   {
     index: 12,
     texto:
-      "A modo caricatura con técnica tradicional, hay una chica que además de su cabello largo y saco, tiene curiosamente un tapabocas. En tinta china con técnica de pincel húmedo sobre papel acuarela está plasmada ella de manera rápida y espontánea.",
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua quis nostrud exercitation ullamco laboris",
+  },
+  {
+    index: 13,
+    texto:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
+  },
+  {
+    index: 14,
+    texto:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
+  },
+  {
+    index: 15,
+    texto:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
   },
 ];
 
 const initGallery = () => {
   /*Ordenar imagenes por indice*/
-  const imageArray = Array.prototype.slice.call(imagenes, 0).sort((a, b) => {
+  const imageArray = Array.prototype.slice.call(imagenes, 0)
+  .sort((a, b) => {
     const indexA = parseInt(a.dataset.index);
     const indexB = parseInt(b.dataset.index);
     return indexA - indexB;
@@ -146,7 +152,7 @@ const addPagination = () => {
   imagenes.forEach(() => {
     pagination.insertAdjacentHTML(
       "afterbegin",
-      `<div class="pagination-icon" data-pag=${i}></div>`
+      `<div class="pagination-icon" data-page=${i}></div>`
     );
     i--;
   });
@@ -162,7 +168,7 @@ pageIcons = document.querySelectorAll(".pagination-icon");
 
 const paginationStart = () => {
   pageIcons.forEach((icon) => {
-    if (icon.dataset.pag === imagenGaleria.dataset.index)
+    if (icon.dataset.page === imagenGaleria.dataset.index)
       icon.style.backgroundColor = "#48d1bf";
   });
 };
