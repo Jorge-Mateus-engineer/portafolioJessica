@@ -1,7 +1,26 @@
+body::-webkit-scrollbar {
+  width: 1rem;
+  height: 0;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: var(--main-color-shade1);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--accent-color);
+  border-radius: 6px;
+  outline: 1px transparent var(--greys-color);
+}
+
+body {
+  overflow-y: auto;
+}
+
 .container {
   max-width: 160rem;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 4rem 2rem;
   height: calc(100vh - 8rem);
 }
 
@@ -30,21 +49,49 @@
 }
 
 .img1 {
-  background: url("../img/Diseno/Calendarios/1.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.img2 {
   background: url("../img/Diseno/Carteles/0.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-.img3 {
+.img2 {
   background: url("../img/Diseno/Presentación-de-Logo.jpg");
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.img3 {
+  background: url("../img/Diseno/Camapana_el_corral/EL_CORRAL_post.webp");
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.img4 {
+  background: url("../img/Diseno/Campana_frisby/Flayer_FRISBY.webp");
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.img5 {
+  background: url("../img/Diseno/Campana_tres_cordilleras/Post.webp");
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.img6 {
+  background: url("../img/Diseno/Campana_universidades/Desfile_victoriano_Historia_IG.webp");
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.img7 {
+  background: url("../img/Diseno/Campana_XP/XP_pen_Mail.webp");
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
