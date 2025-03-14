@@ -15,7 +15,7 @@ const overlay = document.querySelector(".overlay-gallery");
 const imagenGaleria = document.getElementById("gallery-img");
 const pagination = document.querySelector(".pagination");
 const flechasGaleria = document.querySelectorAll(".gallery-arrow");
-const textoGaleria = document.querySelector(".img-text");
+const tituloGaleria = document.querySelector(".img-tittle");
 const columnOne = document.querySelector(".col1");
 const columnTwo = document.querySelector(".col2");
 const columnThree = document.querySelector(".col3");
@@ -23,88 +23,72 @@ const columns = [columnOne, columnTwo, columnThree];
 let pageIcons;
 let galleryIndex;
 
-const data = [
+const tittles = [
   {
     index: 1,
-    texto:
-      "A veces no hay mucho que decir además de que estás cansada y necesitas un empujón, pero esto no debería ser motivo para dejar de estar estilizada y a la moda. Esta ilustración se realizó en técnica de collage con trozos de periódico y algunos fragmentos de revista sobre cartulina iris.",
+    texto: "Prueba",
   },
   {
     index: 2,
-    texto:
-      "Este divertido pingüino fue creado con una referencia fotográfica encontrada en Instagram. Utilicé la técnica de acuarela con puntillismo, trazos largos y bolígrafos.",
+    texto: "Titulo",
   },
   {
     index: 3,
-    texto:
-      "Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
+    texto: "Titulo",
   },
   {
     index: 4,
-    texto:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
+    texto: "PEQUEÑA - Tabla de personaje",
   },
   {
     index: 5,
-    texto:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut ad veniam, quis nostrud exercitation ullamco laboris",
+    texto: "POLLO - Tabla de personaje",
   },
   {
     index: 6,
-    texto:
-    "Cabeza de zorro dibujada con bolígrafo de punta de balín con técnica de línea sobre línea desde colores claros a los más oscuros. ",
+    texto: "Titulo",
   },
   {
     index: 7,
-    texto:
-      "En un ejercicio de hacer evidente la personalidad y los gustos de esta persona. Dos monitos, uno durmiendo y otro en contacto directo con la cara del personaje da a entender la relación que tienen y reflejan dos partes de la persona que pueden no verse solo con una foto de su cara.",
+    texto: "Portarretrato de tres monitos",
   },
   {
     index: 8,
-    texto:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
+    texto: "Retrato XURY 1",
   },
   {
     index: 9,
-    texto:
-      "Utilizando técnicas tradicionales como la pintura acrilica con tecnica de difumino mojado sobre mojado, se consiguen gradaciones de color para conseguir profundidad y textura en la imagen. Este juguetón amigo está sacando la lengua tal como hacen muchos niños cuando juegan.",
+    texto: "Retrato XURY",
   },
   {
     index: 10,
-    texto:
-    "Érase una vez un conejo de nariz roja que saltaba por ahí en los jardines robando zanahorias. Collage utilizando revistas con imágenes de diferentes materiales sobre cartulina iris.",
+    texto: "Titulo",
   },
   {
     index: 11,
-    texto:
-    "Utilizando como inspiracion el canario coronado amarillo, se hizo el rediseño de Nico para ser la nueva mascota del mundial de fútbol de Brasil. Un divertido amiguito que refleja el dinamismo que tiene el mundial con colores característicos del lugar.",
+    texto: "POLLO - Tabla de poses",
   },
   {
     index: 12,
-    texto:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua quis nostrud exercitation ullamco laboris",
+    texto: "La melena de Leo 1",
   },
   {
     index: 13,
-    texto:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
+    texto: "La melena de Leo 2",
   },
   {
     index: 14,
-    texto:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
+    texto: "La melena de Leo 3",
   },
   {
     index: 15,
-    texto:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
+    texto: "La Melena de Leo muckup open",
   },
 ];
 
 const initGallery = () => {
   /*Ordenar imagenes por indice*/
-  const imageArray = Array.prototype.slice.call(imagenes, 0)
-  .sort((a, b) => {
+  const imageArray = Array.prototype.slice.call(imagenes, 0).sort((a, b) => {
     const indexA = parseInt(a.dataset.index);
     const indexB = parseInt(b.dataset.index);
     return indexA - indexB;
@@ -182,8 +166,8 @@ const paginationClear = () => {
 //Funcion para agregar los textos a la galeria
 
 const addTextToGallery = function () {
-  const text = data.filter((i) => i.index == galleryIndex);
-  textoGaleria.textContent = text[0].texto;
+  const text = tittles.filter((i) => i.index == galleryIndex);
+  tituloGaleria.textContent = text[0].texto;
 };
 
 //Funcion para mostrar la galeria
@@ -283,11 +267,12 @@ pageIcons.forEach((p) => {
   p.addEventListener("click", () => {
     paginationClear();
     p.style.backgroundColor = "#48d1bf";
-    const img = document.querySelector(`img[data-index="${p.dataset.pag}"]`);
+    const img = document.querySelector(`img[data-index="${p.dataset.page}"]`);
     const newColor = colorThief.getColor(img);
     overlay.style.backgroundColor = `rgba(${newColor[0]},${newColor[1]},${newColor[2]}, 0.95)`;
     imagenGaleria.src = img.src;
-    galleryIndex = parseInt(p.dataset.pag);
+    galleryIndex = p.dataset.page * 1;
+    imagenGaleria.dataset.index = p.dataset.page * 1;
     addTextToGallery();
   });
 });
