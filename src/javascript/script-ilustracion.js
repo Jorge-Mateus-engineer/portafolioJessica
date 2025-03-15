@@ -26,15 +26,15 @@ let galleryIndex;
 const tittles = [
   {
     index: 1,
-    texto: "Prueba",
+    texto: "Lista para la semana",
   },
   {
     index: 2,
-    texto: "Titulo",
+    texto: "Piquero Camanay",
   },
   {
     index: 3,
-    texto: "Titulo",
+    texto: "Travesura",
   },
   {
     index: 4,
@@ -46,27 +46,27 @@ const tittles = [
   },
   {
     index: 6,
-    texto: "Titulo",
-  },
-  {
-    index: 7,
     texto: "Portarretrato de tres monitos",
   },
   {
-    index: 8,
+    index: 7,
     texto: "Retrato XURY 1",
   },
   {
-    index: 9,
+    index: 8,
     texto: "Retrato XURY",
   },
   {
+    index: 9,
+    texto: "Sobre un Conejo",
+  },
+  {
     index: 10,
-    texto: "Titulo",
+    texto: "POLLO - Tabla de poses",
   },
   {
     index: 11,
-    texto: "POLLO - Tabla de poses",
+    texto: "La melena de Leo 2",
   },
   {
     index: 12,
@@ -74,14 +74,10 @@ const tittles = [
   },
   {
     index: 13,
-    texto: "La melena de Leo 2",
-  },
-  {
-    index: 14,
     texto: "La melena de Leo 3",
   },
   {
-    index: 15,
+    index: 14,
     texto: "La Melena de Leo muckup open",
   },
 ];

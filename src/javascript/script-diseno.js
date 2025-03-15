@@ -1,10 +1,10 @@
 import * as carteles from "../img/Diseno/Carteles/*.webp";
 import * as logos from "../img/Diseno/*.jpg";
-import * as corral from "../img/Diseno/Camapana_el_corral/*.webp"
-import * as frisby from "../img/Diseno/Campana_frisby/*.webp"
-import * as cordilleras from "../img/Diseno/Campana_tres_cordilleras/*.webp"
-import * as universidades from "../img/Diseno/Campana_universidades/*.webp"
-import * as xp from "../img/Diseno/Campana_XP/*.webp"
+import * as corral from "../img/Diseno/Camapana_el_corral/*.webp";
+import * as frisby from "../img/Diseno/Campana_frisby/*.webp";
+import * as cordilleras from "../img/Diseno/Campana_tres_cordilleras/*.webp";
+import * as universidades from "../img/Diseno/Campana_universidades/*.webp";
+import * as xp from "../img/Diseno/Campana_XP/*.webp";
 
 const main = document.querySelector("main");
 const cards = document.querySelectorAll(".project-card");
@@ -12,24 +12,31 @@ const imgContainer = document.querySelector(".img-container");
 const overlay = document.querySelector(".overlay-diseno");
 
 const hideGallery = function (e) {
+  document.documentElement.style.overflowY = "auto";
   e.stopPropagation();
   if (window.screen.width <= 832) {
     overlay.style.top = null;
     main.style.touchAction = null;
   }
 
-  if(e.key === "Escape" && e.type === "keydown"){
+  if (e.key === "Escape" && e.type === "keydown") {
     overlay.classList.add("hidden-diseno");
     imgContainer.innerHTML = "";
   } else if (e.type === "click") {
     overlay.classList.add("hidden-diseno");
     imgContainer.innerHTML = "";
   }
-}
+};
 
 const showGallery = function (e) {
+  // Para ubicar el overlay en la posicion correcta
+  const scrollPosition = window.scrollY * 1;
+
   overlay.classList.remove("hidden-diseno");
   overlay.scrollTop = 0;
+  overlay.style.top = `${scrollPosition}px`;
+
+  document.documentElement.style.overflowY = "hidden";
   if (window.screen.width <= 832) {
     overlay.style.top = `${0}px`;
     main.style.touchAction = "none";
@@ -108,7 +115,7 @@ cards.forEach((c) => {
 
 overlay.addEventListener("click", hideGallery);
 
-window.addEventListener("keydown", hideGallery)
+window.addEventListener("keydown", hideGallery);
 
 window.addEventListener("popstate", function (event) {
   event.preventDefault();

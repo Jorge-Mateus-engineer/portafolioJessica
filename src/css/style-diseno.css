@@ -1,27 +1,7 @@
-body::-webkit-scrollbar {
-  width: 1rem;
-  height: 0;
-}
-
-body::-webkit-scrollbar-track {
-  background-color: var(--main-color-shade1);
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: var(--accent-color);
-  border-radius: 6px;
-  outline: 1px transparent var(--greys-color);
-}
-
-body {
-  overflow-y: auto;
-}
-
 .container {
   max-width: 160rem;
   margin: 0 auto;
   padding: 4rem 2rem;
-  height: calc(100vh - 8rem);
 }
 
 .projects-grid {
