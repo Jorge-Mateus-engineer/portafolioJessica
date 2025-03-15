@@ -98,8 +98,12 @@ const initGallery = () => {
 
   if (window.screen.width > 896) {
     imageArray.forEach((img, i) => {
-      const parent = columns[i % columns.length];
-      parent.appendChild(img);
+      if (img.dataset.index == 14) {
+        columnThree.appendChild(img);
+      } else {
+        const parent = columns[i % columns.length];
+        parent.appendChild(img);
+      }
     });
   }
   if (window.screen.width <= 896 && window.screen.width > 592) {
